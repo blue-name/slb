@@ -2,13 +2,13 @@
 
 ## 1. How does Server Load Balancer \(SLB\) health check work? {#section_m43_1qx_wdb .section}
 
-SLB checks the service availability of the backend servers \(ECS instances\) by performing health checks on the backend servers. When SLB determines that an instance is unhealthy, it stops distributing requests to that instance. Distributions will resume to that instance when it becomes healthy again.
+SLB checks the service availability of the backend servers \(ECS instances\) by performing health checks on the backend servers. When SLB determines that an instance is unhealthy, it stops distributing requests to that instance. Distributions to that instance will resume when it becomes healthy again.
 
-As shown in the following figure, the node servers in the LVS cluster and Tengine cluster perform the data forwarding and health check at the same time. The IP address range used by the health check of SLB is 100.64.0.0/10（100.64.0.0/10 is reserved by Alibaba Cloud, and will not be used by any user, there is no security risk \). If the backend ECS instance enables access control such as iptables, you need to allow the access of 100.64.0.0/10（100.64.0.0/10 is reserved by Alibaba Cloud, and will not be used by any user, there is no security risk \) on the intranet NIC.
+The IP address range used to perform the health check is 100.64.0.0/10. The backend servers cannot block this CIDR block. You do not need to additionally configure a security group rule to allow access from this CIDR block. However, if you have configured security rules such as iptables, allow access from this CIDR block \(100.64.0.0/10 is reserved by Alibaba Cloud, and other users cannot use any IP address in this CIDR block, so there is no security risk\).
 
 For more information, see [Health check overview](../reseller.en-US/Archives/User Guide (Old Console)/Listener/Health check/Health check overview.md#).
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4288/15398329203226_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4288/15421824723226_en-US.png)
 
 ## 2. What are recommended configurations for health check? {#section_jhf_jqx_wdb .section}
 
@@ -19,7 +19,7 @@ The following are recommended health check configurations for TCP/HTTP/HTTPS lis
 |Configuration|Recommended value|
 |:------------|:----------------|
 |**Response timeout**|5 seconds|
-|**Health check interval**|2 seconds|
+|**Health check Interval**|2 seconds|
 |**Unhealthy threshold**|3|
 
 The following are recommended health check configurations for UDP listeners.
@@ -27,7 +27,7 @@ The following are recommended health check configurations for UDP listeners.
 |Configuration|Recommended value|
 |:------------|:----------------|
 |**Response timeout**|10 seconds|
-|**Health check interval**|5 seconds|
+|**Health check Interval**|5 seconds|
 |**Unhealthy threshold**|3|
 |**Healthy threshold**|3|
 
@@ -76,13 +76,13 @@ Health check is performed in the cluster to avoid single points of failure. Ther
 
 Symptoms:
 
-The 502 Bad Gateway error occurred when accessing the SLB service and the health status of the backend servers is indicated abnormal.  However, the ECS instance can be accessed from the intranet and the port 80 listening is normal although a 404 error is reported in the web logs.
+The 502 Bad Gateway error occurred when accessing the SLB service and the health status of the backend servers is indicated abnormal. However, the ECS instance can be accessed from the intranet and the port 80 listening is normal although a 404 error is reported in the web logs.
 
 Cause:
 
 The page used for health check does not exist.
 
-Solution:
+Resolution:
 
 Modify the health check configurations accordingly.
 
@@ -100,7 +100,7 @@ Cause:
 
 The listener uses TCP protocol but the health check uses HTTP protocol. In this situation, SLB uses the GET method instead of the HEAD method to do the health check.
 
-Solution:
+Resolution:
 
 Use the same protocol for the listener and corresponding health check.
 
@@ -114,7 +114,7 @@ Cause:
 
 Domain name app.test.com is configured for health check. RDS or self-built database failure causes the access error to app.test.com, so the health check fails.
 
-Solution:
+Resolution:
 
 Configure the domain name used for health check to www.test.com.
 
@@ -124,7 +124,7 @@ Symptoms:
 
 After configuring the backend TCP port in a SLB listener, a network connection exception is frequently shown in the backend service logs. The requests are sent from the SLB instance and the SLB instance also sends RST packets to the backend server at the same time.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4288/15398329213231_en-US.jpg)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4288/15421824723231_en-US.jpg)
 
 Cause:
 
@@ -139,7 +139,7 @@ TCP is transparent to the upper-Layer applications and is utilized to reduce the
 
 After the health check succeeds, the SLB instance directly sends RST packets to terminate the connection and no data is sent afterwards. Therefore, upper-Layer services \(such as Java connection pool\) deem that the connection is abnormal and errors such as `Connection reset by peer` are displayed.
 
-Solution:
+Resolution:
 
 -   Use HTTP protocol instead.
 -   In the service layer, filter the logs from the SLB IP address range and ignore related error messages.
@@ -165,7 +165,7 @@ Resolution:
 -   Modify the main configuration file and annotate the default site.
 -   Add the domain name used for health check in the health check configurations.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4288/15398329213234_en-US.jpg)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4288/15421824723234_en-US.jpg)
 
 ## 15. How to troubleshoot health check exceptions? {#section_fjj_ttx_wdb .section}
 
@@ -183,9 +183,9 @@ Follow these steps to troubleshoot health check exceptions:
 
         After you run the route adding tool, the intranet route is displayed as normal, as shown in the figure below.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4288/15398329213241_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4288/15421824723241_en-US.png)
 
-4.  Ensure the backend port you configured in the listener is opened on the backend server.
+4.  Make sure that the backend server has enabled the corresponding port which must be consistent with the one you configured in your Server Load Balancer listening configuration.
 5.  Check if the weight value of the backend ECS instance is zero. If so, the health check status is abnormal.
 6.  Check if there is a firewall or other security software in the backend ECS instance. This kind of software could mask the local IP address of the SLB system so as that the system cannot communication with the backend ECS instance. We recommend closing the firewall or uninstalling the security software to perform a test.
 7.  Check whether the response time of the backend ECS instance exceeds the response timeout of health check.
@@ -202,16 +202,16 @@ Follow these steps to troubleshoot health check exceptions:
     time echo -e ‘HEAD <Check path of health check> HTTP/1.0\r\n\r\n’|nc -t <Port>
     ```
 
-    **Note:** Run this command on another ECS instance in the same account and region. For example, the check path of health check is /, the intranet IP of the ECS instance is 192.168.0.1, and the port number is 80, use the following command:  `time echo -e ‘HEAD / HTTP/1.0\r\n\r\n’ | nc -t 192.168.0.1 80.`
+    **Note:** Run this command on another ECS instance in the same account and region. For example, the check path of health check is /, the intranet IP of the ECS instance is 192.168.0.1, and the port number is 80, use the following command: `time echo -e ‘HEAD / HTTP/1.0\r\n\r\n’ | nc -t 192.168.0.1 80.`
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4288/15398329213246_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4288/15421824723246_en-US.png)
 
     When the value of the real parameter in the result exceeds the response timeout, the backend ECS instance is declared as unhealthy.
 
-    Solution:
+    Resolution:
 
     -   Optimize the application or program to reduce the response time.
-    -   Increase the response timeout value set in the listener check.
+    -   Increase the response timeout value.
 8.  For the Layer-7 health check, run `echo -e “HEAD /test.html HTTP/1.0\r\n\r\n” |nc -t LAN_IP 80` to check if the returned value is 2XX or 3XX.
 
     **Note:** /test.html is the check path of health check. Change it as needed.
