@@ -69,7 +69,7 @@ A server certificate is used by the client browser to check whether the certific
 
     The following figure is an example of the key generation.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4133/15421817592750_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4133/15421897642750_en-US.png)
 
 4.  Run the following command and input the required information according to the prompts. Press Enter to generate the csr file used to generate the certificate.
 
@@ -79,7 +79,7 @@ A server certificate is used by the client browser to check whether the certific
 
     **Note:** Common Name is the domain name of the SLB instance.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4133/15421817592753_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4133/15421897642753_en-US.png)
 
 5.  Run the following command to generate the crt file.
 
@@ -138,7 +138,7 @@ A server certificate is used by the client browser to check whether the certific
 
     **Note:** A challenge password is the client certificate password \(Separate it from the password of `client.key`. In this tutorial, the password is test\). It can be same as that of the root certificate or server certificate.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4133/15421817592757_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4133/15421897642757_en-US.png)
 
 4.  Run the following command to sign the client key by using the CA key in step 2.
 
@@ -148,7 +148,7 @@ A server certificate is used by the client browser to check whether the certific
 
     Enter y twice when prompted to confirm the operation.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4133/15421817592758_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4133/15421897652758_en-US.png)
 
 5.  Run the following command to convert the certificate to the PKCS12 file that can be recognized by most browsers.
 
@@ -160,7 +160,7 @@ A server certificate is used by the client browser to check whether the certific
 
     Then enter the password used for exporting the client certificate. This password is used to protect the client certificate, which is required when installing the client certificate.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4133/15421817592759_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4133/15421897652759_en-US.png)
 
 6.  Run the following command to view the generated client certificate.
 
@@ -169,7 +169,7 @@ A server certificate is used by the client browser to check whether the certific
      ls
     ```
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4133/15421817592760_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4133/15421897652760_en-US.png)
 
 
 ## Step 4 Upload the server certificate and the CA certificate {#section_mdg_411_wdb .section}
@@ -221,9 +221,6 @@ Install the generated client certificates. The Windows operating system and IE w
     1.  Open the IE web browser, click **Settings** \> **Internet Options**.
     2.  Click the **Content** tab, and then click **Certificates** to import the downloaded client certificate. When importing the certificate, enter the password of the PKCS12 file.
 
-        ![](../DNSLB11827830/images/2781_en-US.png)
-
-
 ## Step 6 Configure an HTTPS listener \(mutual authentication\) {#section_p5w_zd1_wdb .section}
 
 1.  Log on to the [SLB console](https://partners-intl.aliyun.com/login-required#/slb).
@@ -234,14 +231,11 @@ Install the generated client certificates. The Windows operating system and IE w
     -   **Select Listener Protocol**: HTTPS
     -   **Listening Port**: 443
     -   **Scheduling Algorithm**: Round Robin \(RR\)
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16604/154218175910035_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16604/154218976510035_en-US.png)
 
 5.  Click **Next**. Under the SSL Certificates tab, configure the SSL certificate and enable mutual authentication.
-
     -   **Server Certificate**: Select the uploaded server certificate.
     -   **CA Certificate**: Select the uploaded CA certificate.
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15659/15421817597331_en-US.png)
-
 6.  Click **Next**. On the displayed page, click Default Server Group and then click **Add**. Add ECS instances and set the backend port to 80.
 7.  Click **Next** and enable health check.
 8.  Click **Next** to view the listener configurations.
@@ -252,13 +246,10 @@ Install the generated client certificates. The Windows operating system and IE w
 
 1.  Go back to the Server Load Balancer page to view the health check status. When the status is **Normal**, the backend servers can receive requests forwarded by SLB listeners.
 2.  Enter the public IP address of the Server Load Balancer instance in the web browser, and select Trust when prompted whether to trust the client certificate.
-
-    ![](../DNSLB11827830/images/2786_en-US.png)
-
 3.  Refresh web page, and then you can find that the requests are evenly distributed to the backend servers.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15659/154218175913780_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15659/154218976513780_en-US.png)
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15659/154218175913781_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15659/154218976513781_en-US.png)
 
 
