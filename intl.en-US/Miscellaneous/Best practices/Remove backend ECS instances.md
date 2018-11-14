@@ -6,15 +6,15 @@ Directly removing backend ECS instances from a Server Load Balancer instance may
 
 Directly removing backend ECS instances from a Server Load Balancer instance may cause service interruption. We recommend that you follow these steps to remove ECS instances:
 
-1.  Log on to the [Server Load Balancer console](https://slbnew.console.aliyun.com/?spm=5176.2020520101.1002.d10slb.EUrBxg#/list/cn-hangzhou).
+1.  Log on to the [SLB console](https://partners-intl.aliyun.com/login-required#/slb).
 2.  Choose a region and then click the ID of the target Server Load Balancer instance.
 3.  In the Details left-side navigation pane, click **Server** \> **Backend Server**.
 
-    If the ECS instance is added to a server group, click the VServer group or master-slave server group accordingly.
+    If the ECS instance is added to a server group, click the VServer group or active/standby server group accordingly.
 
 4.  Hover the mouse pointer to the weight of the target ECS instance and then set the value to 0.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4166/15396767053124_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4166/15421821563124_en-US.png)
 
 5.  When no traffic is distributed to the ECS instance, click **Remove** to remove it from the backend server pool.
 
@@ -24,17 +24,17 @@ If there are ongoing service requests sent to the ECS instance after removing it
 
 -   Whether the ECS instance is added to backend server pools of other Server Load Balancer instances.
 
-    You can use the ECS instance ID to filter Server Load Balancer instances that the ECS instance is added to.
+    You can use the ECS instance ID and the Intranet IP to filter Server Load Balancer instances that the ECS instance is added to.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4166/15396767053126_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4166/15421821563126_en-US.png)
 
--   Log on to the ECS instance, run the `netstat` command to check whether the ECS instance is deployed with public services.
+-   Log on to the ECS instance, run the `netstat` command to check whether the ECS instance is deployed with Internet services.
     -   Windows: Run `netstat -ano` to view all open ports on the instance.
 
-        ![](images/3130_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4166/15421821563130_en-US.png)
 
     -   Linux: Run this command to view all open ports on the instance or use other parameters of the `netstat` command.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4166/15396767053131_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4166/15421821563131_en-US.png)
 
 
