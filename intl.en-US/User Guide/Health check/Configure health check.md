@@ -61,7 +61,7 @@ If SLB receives the expected response from the backend server, the health check 
 
 |
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15664/15421866557332_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15664/15421868067332_en-US.png)
 
 
 ## Example of health check response timeout and health check interval {#section_krm_4gb_wdb .section}
@@ -77,7 +77,7 @@ Health check failure time window = Response Timeout × Unhealthy Threshold + Hea
 
 The following figure shows the process to declare an unhealthy backend server:
 
-![](images/31894_en-US_source.png)
+![](images/31894_en-US.png)
 
 Health check success time window = Health check response time × Healthy Threshold + Health Check Interval × \(Healthy Threshold - 1\). That is, \(1x3\)+2x\(3-1\)=7s.
 
