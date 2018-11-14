@@ -4,7 +4,7 @@ You can configure health check settings when adding a listener. In general, the 
 
 ## Configure health check {#section_rsr_4cb_wdb .section}
 
-You can configure the health check of a listener on the console or through API. For more information, see [Health check overview](reseller.en-US/User Guide/Health check/Health check overview.md#) and [Health check FAQ](../reseller.en-US/Miscellaneous/FAQ/Heath check FAQ.md#).
+You can configure the health check of a listener on the console or through API. For more information, see [Health check overview](reseller.en-US/User Guide/Health check/Health check overview.md#) and [Health check FAQ](../../../../reseller.en-US/Miscellaneous/FAQ/Heath check FAQ.md#).
 
 To configure the health check, complete these steps:
 
@@ -61,7 +61,7 @@ If SLB receives the expected response from the backend server, the health check 
 
 |
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15664/15421863567332_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15664/15421866557332_en-US.png)
 
 
 ## Example of health check response timeout and health check interval {#section_krm_4gb_wdb .section}
@@ -85,7 +85,7 @@ Health check success time window = Health check response time × Healthy Thresho
 
 The following figure shows the process to declare a healthy backend server \(Assume that it takes 1 second for the backend server to respond to the health check request\):
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4138/15421863562820_en-US.png)
+![](images/11917_en-US_source.png)
 
 ## Configure a domain name in HTTP health check {#section_yft_fhb_wdb .section}
 
