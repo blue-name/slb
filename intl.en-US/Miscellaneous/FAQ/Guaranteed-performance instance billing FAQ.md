@@ -25,7 +25,7 @@ The fee collection for the guaranteed-performance instances take effect in batch
     Effective regions: China North 1 \(Qingdao\), China North 2 \(Beijing\), China East 2 \(Shanghai\), China South 1 \(Shenzhen\)
 
 
-## 3. Will intranet SLB instances be charged for specification fee? {#section_z11_2cy_wdb .section}
+## 2. Will intranet SLB instances be charged for specification fee? {#section_z11_2cy_wdb .section}
 
 -   If the intranet SLB instance is a shared-performance SLB instance, no specification fees are collected.
 -   If the intranet SLB instance is a guaranteed-performance SLB instance, corresponding specification fees are collected.
@@ -41,33 +41,33 @@ The shared-performance instances will not be charged for the specification fee.
 
 However, if you change the shared-performance instances to the guaranteed-performance instances, the specification fees will be collected from April 1, 2018.
 
-## 5. Can shared-performance instances be changed to guaranteed-performance instances? {#section_erv_zby_wdb .section}
+## 4. Can shared-performance instances be changed to guaranteed-performance instances? {#section_erv_zby_wdb .section}
 
 Yes.
 
 Once an instance is changed to the guaranteed-performance type, it cannot change back and will be charged from April 1st.
 
-## 6. What are the specifications for shared-performance instances? {#section_frv_zby_wdb .section}
+## 5. What are the specifications for shared-performance instances? {#section_frv_zby_wdb .section}
 
 Shared-performance instances do not guarantee the performance. No specifications are available.
 
-## 7. How to select a performance specification? {#section_nmk_fcy_wdb .section}
+## 6. How to select a performance specification? {#section_nmk_fcy_wdb .section}
 
 -   You can select the largest specification for Pay-As-You-Go instances, because Pay-As-You-Go instance are charged according to the actual usage and are free of charge in idle time.
 
-## 8. What are the prices of performance specifications? {#section_irv_zby_wdb .section}
+## 7. What are the prices of performance specifications? {#section_irv_zby_wdb .section}
 
 Six specifications are provided for guaranteed-performance SLB instances. No specification fee is collected for the Standard I \(slb.s1.small\) specification. For more information, see [Billing](../../../../reseller.en-US/Miscellaneous/FAQ/How to use guaranteed-performance SLB instances?.md#section_n5z_s1n_vdb).
 
-## 9. Are the traffic fee and instance fee of guaranteed-performance instances the same as those of shared-performance instances? {#section_jrv_zby_wdb .section}
+## 8. Are the traffic fee and instance fee of guaranteed-performance instances the same as those of shared-performance instances? {#section_jrv_zby_wdb .section}
 
 Yes.
 
-## 10. How many guaranteed-performance instances can be created? {#section_krv_zby_wdb .section}
+## 9. How many guaranteed-performance instances can be created? {#section_krv_zby_wdb .section}
 
 Same as the shared-performance instances, you can purchase up to 60 guaranteed-performance instances. Open a ticket to apply for more quota.
 
-## 11. Can I adjust the specification of a guaranteed-performance instance? {#section_lrv_zby_wdb .section}
+## 10. Can I adjust the specification of a guaranteed-performance instance? {#section_lrv_zby_wdb .section}
 
 Yes.
 
