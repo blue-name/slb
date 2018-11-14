@@ -78,7 +78,7 @@ Yes.
 -   Once a shared-performance instance is changed to a guaranteed-performance instance, it cannot be changed back.
 -   Some instances may exist in older clusters due to historical stock. These instances need to be migrated when they are changed to guaranteed-performance instances. Therefore a service interruption of 10-30 seconds may occur. We recommend that you change the instance type when the traffic is low.
 
-## 9. Can I still buy shared-performance instances? {#section_orv_zby_wdb .section}
+## 11. Can I still buy shared-performance instances? {#section_orv_zby_wdb .section}
 
 Yes.
 
