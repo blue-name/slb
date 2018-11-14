@@ -61,7 +61,7 @@ If SLB receives the expected response from the backend server, the health check 
 
 |
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15664/15421869667332_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15664/15421872917332_en-US.png)
 
 
 ## Example of health check response timeout and health check interval {#section_krm_4gb_wdb .section}
