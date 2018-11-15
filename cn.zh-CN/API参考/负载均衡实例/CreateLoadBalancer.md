@@ -1,4 +1,4 @@
-# CreateLoadBalancer {#doc_api_726134 .reference}
+# CreateLoadBalancer {#doc_api_753644 .reference}
 
 创建负载均衡实例。
 
@@ -7,40 +7,36 @@
 -   实例创建后，会产生费用。关于负载均衡的计费说明，参见[计费说明](~~27692~~)。
 -   如果不指定实例规格（`LoadBalancerSpec`），则创建性能共享型实例。建议在创建负载均衡实例时，通过规格参数（`LoadBalancerSpec`）指定实例的规格。
 
+ **调试** `点击[这里]（https://api.aliyun.com/?spm=a2c4g.11186623.2.11.336d4b47rivF4A#product=Slb&search=CreateLoadBalancer&api=CreateLoadBalancer&params={}&tab=DEBUG&lang=JAVA）在OpenAPI Explorer中可视化调试，并自动生成SDK调用示例。` 
+
 ## 请求参数 {#parameters .section}
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|CreateLoadBalancer|要执行的操作，取值：
+|Action|String|是|CreateLoadBalancer|要执行的操作，取值：**CreateLoadBalancer**
 
-**CreateLoadBalancer**
-
-|
+ |
 |RegionId|String|是|cn-hangzhou|负载均衡实例的地域。
 
  您可以通过调用[DescribeRegions](~~25609~~)接口查询地域ID。
 
  |
-|Address|String|否|192.168.0.0/24|VPC类型负载均衡实例的IP地址。设置该参数时，必须指定
+|Address|String|否|192.168.0.6|VPC类型负载均衡实例的IP地址。设置该参数时，必须指定**VSwitchId**参数的值。
 
-**VSwitchId**
-
-参数的值。
-
-|
+ |
 |AddressIPVersion|String|否|ipv4|IP版本。
 
-|
+ |
 |AddressType|String|否|internet|负载均衡实例的网络类型。取值：
 
  -   internet：创建公网负载均衡实例后，系统会分配一个公网IP地址，可以转发公网请求。
--   intranet：创建公网负载均衡实例后，系统会分配一个内网IP地址，仅可转发内网请求。
+-   intranet：创建内网负载均衡实例后，系统会分配一个内网IP地址，仅可转发内网请求。
 
  |
 |AutoPay|Boolean|否|true|是否是自动支付预付费公网实例的账单，取值：**true|false（默认）**
 
  |
-|Bandwidth|Integer|否|-1|是否是自动支付预付费公网实例的账单，取值：**true|false（默认）**
+|Bandwidth|Integer|否|10|是否是自动支付预付费公网实例的账单，取值：**true|false（默认）**
 
  |
 |ClientToken|String|否|5A2CFF0E-5718-45B5-9D4D-70B3FF3898|用于保证请求的幂等性。由客户端生成该参数值，要保证在不同请求间唯一，最大不值过64个ASCII字符。
@@ -83,21 +79,20 @@
  您可以通过调用[DescribeZone](~~27585~~)接口可查到相应地域下的主备可用区信息。
 
  |
-|PayType|String|否|PrePay|实例的计费类型，取值：
+|PayType|String|否|PayOnDemand|实例的计费类型，取值：
 
  -   PayOnDemand：按量付费
--   PrePay：预付费
 
  |
-|PricingCycle|String|否|Month|预付费公网实例的计费周期，取值：
+|PricingCycle|String|否|month|预付费公网实例的计费周期，取值：**month|year**
 
-`month|year`|
-|Ratio|Integer|否|100|Ratio参数
+ |
+|Ratio|Integer|否|100|Ratio参数。
 
-|
+ |
 |ResourceGroupId|String|否|rg-atstuj3rtoptyui|企业资源组ID。
 
-|
+ |
 |SlaveZoneId|String|否|cn-hangzhou-d|负载均衡实例的备可用区ID。
 
  您可以通过调用[DescribeZone](~~27585~~)接口可查到相应地域下的主备可用区信息。
@@ -105,15 +100,15 @@
  |
 |Tags|String|否|\{"tagKey":"Key1","tagValue":"Value1"\}|负载均衡实例标签。
 
-|
-|VSwitchId|String|否|vsw-255ecrwq5|专有网络实例的所属交换机ID。
+ |
+|VSwitchId|String|否|vsw-bp12mw1f8k3jgygk9bmlj|专有网络实例的所属交换机ID。
 
  创建专有网络类型的负载均衡实例，必须指定该参数。如果指定了该参数，**AddessType**参数的值会默认被设置为**intranet**。
 
  |
-|VpcId|String|否|vpc-25dvzy9f8|负载均衡实例的所属的VPC ID。
+|VpcId|String|否|vpc-bp1aevy8sofi8mh1qc5cm|负载均衡实例的所属的VPC ID。
 
-|
+ |
 
 ## 返回参数 {#resultMapping .section}
 
@@ -121,34 +116,34 @@
 |--|--|---|--|
 |LoadBalancerId|String|139a00604ad-cn-east-hangzhou-01|负载均衡实例的ID。
 
-|
+ |
 |Address|String|42.250.6.36|分配的负载均衡实例的IP地址。
 
-|
+ |
 |VpcId|String|vpc-25dvzy9f8|负载均衡实例的所属专有网络的ID。
 
-|
+ |
 |VSwitchId|String|vsw-255ecrwq5|负载均衡实例的所属交换机的ID。
 
-|
+ |
 |LoadBalancerName|String|abc|负载均衡实例的名称。
 
-|
+ |
 |AddressIPVersion|String|ipv4|负载均衡实例的IP地址类型。
 
-|
+ |
 |NetworkType|String|classic|负载均衡实例网络类型。
 
-|
+ |
 |OrderId|Long|201429619788910|订单ID。
 
-|
+ |
 |RequestId|String|365F4154-92F6-4AE4-92F8-7FF34B540710|请求ID。
 
-|
+ |
 |ResourceGroupId|String|rg-atstuj3rtoptyui|企业资源组ID。
 
-|
+ |
 
 ## 示例 {#demo .section}
 
@@ -158,25 +153,25 @@
 
 /?RegionId=cn-hangzhou
 &Action=CreateLoadBalancer
-&Address=192.168.0.0/24
+&Address=192.168.0.6
 &AddressIPVersion=ipv4
 &AddressType=internet
 &AutoPay=true
-&Bandwidth=-1
+&Bandwidth=10
 &ClientToken=5A2CFF0E-5718-45B5-9D4D-70B3FF3898
 &Duration=1
 &InternetChargeType=paybytraffic
 &LoadBalancerName=abc
 &LoadBalancerSpec=slb.s2.small
 &MasterZoneId=cn-hangzhou-b
-&PayType=PrePay
-&PricingCycle=Month
+&PayType=PayOnDemand
+&PricingCycle=month
 &Ratio=100
 &ResourceGroupId=rg-atstuj3rtoptyui
 &SlaveZoneId=cn-hangzhou-d
 &Tags={"tagKey":"Key1","tagValue":"Value1"}
-&VpcId=vpc-25dvzy9f8
-&VSwitchId=vsw-255ecrwq5
+&VpcId=vpc-bp1aevy8sofi8mh1qc5cm
+&VSwitchId=vsw-bp12mw1f8k3jgygk9bmlj
 &<公共请求参数>
 
 ```
@@ -187,13 +182,15 @@
 
 ``` {#xml_return_success_demo}
 <CreateLoadBalancerResponse>
-  <RequestId>365F4154-92F6-4AE4-92F8-7FF34B540710</RequestId>
-  <LoadBalancerId>139a00604ad-cn-east-hangzhou-01</LoadBalancerId>
-  <Address>42.250.6.36</Address>
-  <NetworkType>classic</NetworkType>
-  <MasterZoneId>cn-hangzhou-b</MasterZoneId>
-  <SlaveZoneId>cn-hangzhou-d</SlaveZoneId>
+  <NetworkType>vpc</NetworkType>
   <LoadBalancerName>abc</LoadBalancerName>
+  <Address>192.168.0.6</Address>
+  <ResourceGroupId>rg-acfmxazb4ph6aiy</ResourceGroupId>
+  <RequestId>AB197CF0-D9E9-4475-A89D-35DBCCF13BBE</RequestId>
+  <AddressIPVersion>ipv4</AddressIPVersion>
+  <LoadBalancerId>lb-bp1b6c719dfa08exfuca5</LoadBalancerId>
+  <VSwitchId>vsw-bp12mw1f8k3jgygk9bmlj</VSwitchId>
+  <VpcId>vpc-bp1aevy8sofi8mh1qc5cm</VpcId>
 </CreateLoadBalancerResponse>
 
 ```
@@ -202,13 +199,15 @@
 
 ``` {#json_return_success_demo}
 {
-	"SlaveZoneId":"cn-hangzhou-d",
-	"NetworkType":"classic",
+	"NetworkType":"vpc",
 	"LoadBalancerName":"abc",
-	"MasterZoneId":"cn-hangzhou-b",
-	"Address":"42.250.6.36",
-	"RequestId":"365F4154-92F6-4AE4-92F8-7FF34B540710",
-	"LoadBalancerId":"139a00604ad-cn-east-hangzhou-01"
+	"RequestId":"AB197CF0-D9E9-4475-A89D-35DBCCF13BBE",
+	"ResourceGroupId":"rg-acfmxazb4ph6aiy",
+	"Address":"192.168.0.6",
+	"AddressIPVersion":"ipv4",
+	"LoadBalancerId":"lb-bp1b6c719dfa08exfuca5",
+	"VSwitchId":"vsw-bp12mw1f8k3jgygk9bmlj",
+	"VpcId":"vpc-bp1aevy8sofi8mh1qc5cm"
 }
 ```
 
