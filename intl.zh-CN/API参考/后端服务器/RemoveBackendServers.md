@@ -4,6 +4,12 @@
 
 **说明：** 如果要移除的后端服务器不在指定的负载均衡实例的服务器列表中，会直接忽略，不会报错。
 
+## 调试 {#section_thv_5yz_qfb .section}
+
+```
+点击[这里](https://api.aliyun.com/#product=Slb&api=RemoveBackendServers)在OpenAPI Explorer中可视化调试，并自动生成SDK调用示例。
+```
+
 ## 请求参数 {#section_v5w_nds_cz .section}
 
 |名称|类型|是否必须|描述|
