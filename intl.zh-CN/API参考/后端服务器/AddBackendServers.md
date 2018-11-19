@@ -4,6 +4,12 @@
 
 **说明：** 如果一次请求中添加多个相同的ECS实例，只会取第一个，其他相同实例会被忽略。
 
+## 调试 {#section_qlk_kxz_qfb .section}
+
+```
+点击[这里](https://api.aliyun.com/#product=Slb&api=AddBackendServers)在OpenAPI Explorer中可视化调试，并自动生成SDK调用示例。
+```
+
 ## 请求参数 {#section_v5w_nds_cz .section}
 
 |名称|类型|是否必须|描述|
