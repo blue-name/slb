@@ -1,13 +1,13 @@
 # RAM authentication {#concept_slb_rjf_cz .concept}
 
-Before calling SLB APIs using a RAM user, the primary account must grant the RAM user the corresponding permission by creating an authentication policy. In the authentication policy, an Alibaba Cloud Resource Name \(ARN\) is used as the unique identifier of the resource to authorize.
+Before calling SLB APIs using a RAM user, the primary account must grant the RAM user the corresponding permission by creating an authentication policy. An Alibaba Cloud Resource Name \(ARN\) is used as a unique description of a resource in the authorization rule. The following table lists the ARNs of Smart Access Gateway APIs.
 
 ## SLB resources {#section_vj2_fyf_cz .section}
 
-The following table lists the SLB resources that can be authorized and the ARN format.
+The following table lists SLB resources that can be authorized and the corresponding ARN formats.
 
-|Resource|ARN format|
-|--------|----------|
+|Resource|ARN|
+|--------|---|
 |LoadBalancer|acs:slb:$regionid:$accountid:loadbalancer/$loadbalancerid|
 |acs:slb:$regionid:$accountid:loadbalancer/\*|
 |acs:slb:\*:$accountid:loadbalancer/\*|
@@ -21,10 +21,10 @@ The following table lists the SLB resources that can be authorized and the ARN f
 
 ## SLB APIs {#section_ytz_qyf_cz .section}
 
-The following table lists the VPC actions that can be authorized and the ARN format.
+The following table lists SLB APIs that can be authorized and the corresponding ARN formats.
 
-|API |ARN format|
-|----|----------|
+|API|ARN format|
+|---|----------|
 |CreateLoadBalancer|acs:slb:$regionid:$accountid:loadbalancer/\*|
 |ModifyLoadBalancerInternetSpec|acs:slb:$regionid:$accountid:loadbalancer/$loadbalancerid|
 |DeleteLoadBalancer|acs:slb:$regionid:$accountid:loadbalancer/$loadbalancerid|
@@ -33,7 +33,7 @@ The following table lists the VPC actions that can be authorized and the ARN for
 |DescribeLoadBalancers|acs:slb:$regionid:$accountid:loadbalancer/\*|
 |DescribeLoadBalancerAttribute|acs:slb:$regionid:$accountid:loadbalancer/$loadbalancerid|
 |DescribeRegions|acs:slb:\*:$accountid:\*|
-|UploadServerCertificate|acs:slb:%s:%s:certificate/\*|
+|UploadServerCertificate|ACS: SLB: % s: Certificate /\*|
 |DeleteServerCertificate|acs:slb:%s:%s:certificate/%|
 |DescribeServerCertificate|acs:slb:%s:%s:certificate/%|
 |SetServerCertificateName|acs:slb:%s:%s:certificate/%|
@@ -43,7 +43,7 @@ The following table lists the VPC actions that can be authorized and the ARN for
 |acs:slb:%s:%s:certificate/%|
 |CreateLoadBalancerTCPListener|acs:slb:$regionid:$accountid:loadbalancer/$loadbalancerid|
 |CreateLoadBalancerUDPListener|acs:slb:$regionid:$accountid:loadbalancer/$loadbalancerid|
-|Deleteloadbalancerlistener|acs:slb:$regionid:$accountid:loadbalancer/$loadbalancerid|
+|DeleteLoadBalancerListener|acs:slb:$regionid:$accountid:loadbalancer/$loadbalancerid|
 |StartLoadBalancerListener|acs:slb:$regionid:$accountid:loadbalancer/$loadbalancerid|
 |StopLoadBalancerListener|acs:slb:$regionid:$accountid:loadbalancer/$loadbalancerid|
 |SetLoadBalancerHTTPListenerAttribute|acs:slb:$regionid:$accountid:loadbalancer/$loadbalancerid|
