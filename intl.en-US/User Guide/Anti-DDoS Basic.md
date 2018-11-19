@@ -4,11 +4,11 @@ You can view Alibaba Cloud Security thresholds of an Internet SLB instance on th
 
 ## Introduction to Anti-DDoS Basic {#section_cnq_p3c_wdb .section}
 
-Alibaba Cloud provides up to 5 Gbps basic anti-DDoS protection for SLB. As shown in the following figure, all traffic from the Internet must first go through Alibaba Cloud Security before arriving at SLB. Anti-DDoS Basic cleans and filters common DDoS attacks and protects your services against attacks such as SYN flood, UDP flood, ACK flood, ICMP flood, and DNS Query flood.
+Alibaba Cloud provides up to 5 Gbps Anti-DDoS Basic for SLB. As shown in the following figure, all traffic from the Internet must first go through Alibaba Cloud Security before arriving at SLB. Anti-DDoS Basic scrubs and filters common DDoS attacks and protects your services against attacks such as SYN flood, UDP flood, ACK flood, ICMP flood, and DNS Query flood.
 
 ![](../DNSLB11827830/images/2870_en-US.jpeg)
 
-Anti-DDoS Basic sets the scrubbing threshold and blackholing threshold according to the bandwidth of the Internet SLB instance. When the inbound traffic reaches the threshold, scrubbling or blackholing is triggered:
+Anti-DDoS Basic sets the scrubbing threshold and blackholing threshold according to the bandwidth of the Internet SLB instance. When the inbound traffic reaches the threshold, scrubbing or blackholing is triggered:
 
 -   Scrubbing: When the attack traffic from the Internet exceeds the scrubbing threshold or matches certain attack traffic model, Alibaba Cloud Security starts scrubbing the attack traffic. The scrubbing includes packet filtration, traffic speed limitation, packet speed limitation and more.
 -   Blackholing: When the attack traffic from the Internet exceeds the blackholing threshold, blackholing is triggered and all inbound traffic is dropped.
@@ -16,7 +16,7 @@ Anti-DDoS Basic sets the scrubbing threshold and blackholing threshold according
 The thresholds are calculated based on the following principles:
 
 -   The thresholds are determined by the bandwidth of the SLB instance, that is, the outbound bandwidth of the SLB instance. The thresholds are high when the bandwidth of the instance is high and vise versa.
--   Determine the blackholing threshold based on the security credit score of the user.
+-   The blackholing threshold is determined by the security credit score of the user.
 
     **Note:** The security credit score only influences the blackholing threshold and does not influence the scrubbing threshold.
 
@@ -25,7 +25,7 @@ Complete these steps to calculate the threshold:
 
 1.  The SLB backstage provides the recommended threshold value that can ensure normal running of the instance according to the purchased bandwidth.
 
-    **Note:** The outbound bandwidth of a Pay-As-You-Go instance is the peak bandwidth in the region. Currently the peak bandwidth in Mainland China is 5G. For more information, see [EN-US\_TP\_15672.md\#](reseller.en-US/Limits/各地域带宽峰值限制.md#).
+    **Note:** The outbound bandwidth of a Pay-As-You-Go instance is the peak bandwidth in the region. Currently the peak bandwidth in Mainland China is 5G. For more information, see [EN-US\_TP\_15672.md\#](reseller.en-US/Limits/Peak bandwidths in different regions.md#).
 
     -   The relationship between SLB bandwidth and traffic scrubbing threshold \(bits/s\)
         -   When the SLB bandwidth < 100 Mbps, the default traffic scrubbing threshold \(bits/s\) = 120 Mbps
@@ -61,7 +61,7 @@ To view thresholds, complete these steps:
     -   Traffic Scrubbing Threshold \(packets/s\): When the inbound packets exceed this value, scrubbing is triggered.
     -   Blackholing Threshold: When the inbound traffic exceeds this value, blackholing is triggered.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15694/15421815327339_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15694/15426158387339_en-US.png)
 
 
 ## Allow read-only access to Anti-DDoS Basic {#section_c4n_wjc_wdb .section}
@@ -73,12 +73,12 @@ To allow read-only access to Anti-DDoS Basic, complete these steps:
 1.  Use the primary account to log on to the RAM console.
 2.  In the left-side navigation pane, click **Users**, find the target RAM user and click **Manage**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4157/15421815322872_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4157/15426158382872_en-US.png)
 
 3.  Click **User Authorization Policies**, and then click **Edit Authorization Policy**.
-4.  In the displayed dialog box, search **AliyunYundunDDosReadOnlyAccess**, and then add it to the Selected Authorization Policy Names list. Click **OK**.
+4.  In the displayed dialog box, search **AliyunYundunDDosReadOnlyAccess**, and then add it to the Selected Authorization Policy Name list. Click **OK**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4157/15421815322873_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4157/15426158382873_en-US.png)
 
 
 ## View the security credit score {#section_chv_cjy_gfb .section}
@@ -87,13 +87,12 @@ The security credit score is provided by Alibaba Cloud based on your attack hist
 
 Complete these steps to view the security credit score:
 
-1.  Log on to the .
-2.  Log on to the [Anti-DDoS Basic console](https://partners-intl.console.aliyun.com/?p=ddosnext#/instance).
-3.  Select **Anti-DDoS Basic** \> **Instances**.
-4.  Click the **Security Credibility** link to view the security credit score of the account.
+1.  Log on to the [Anti-DDoS Basic console](https://partners-intl.console.aliyun.com/?p=ddosnext#/instance).
+2.  Select **Anti-DDoS Basic** \> **Instances**.
+3.  Click the **Security Credibility** link to view the security credit score of the account.
 
     **Note:** Security credit scores are region-based.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15694/154218153212959_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15694/154261583812959_en-US.png)
 
 
