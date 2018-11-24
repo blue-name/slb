@@ -31,11 +31,11 @@ UDP协议多用于关注实时性而相对不注重可靠性的场景，如视�
 4.  选择以下一种方法，打开监听配置向导：
     -   在实例管理页面，找到目标实例，然后单击**添加配置向导**。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/154218087810004_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/154305109110004_zh-CN.png)
 
     -   在实例管理页面，单击目标实例ID。在监听页面，单击**添加监听**。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16161/15421808787399_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16161/15430510917399_zh-CN.png)
 
 
 ## 步骤二 配置协议监听 {#section_ly4_2pn_42b .section}
@@ -63,13 +63,14 @@ UDP协议多用于关注实时性而相对不注重可靠性的场景，如视�
         -   **源IP**：基于源IP地址的一致性hash，相同的源地址会调度到相同的后端服务器。
         -   **四元组**：基于四元组的一致性hash（源IP+目的IP+源端口+目的端口），相同的流会调度到相同的后端服务器。
         -   **QUIC ID**：基于QUIC Connection ID一致性hash，相同的QUIC Connection ID会调度到相同的后端服务器。
+
+**说明：** QUIC协议正在快速演进，该算法基于[draft-ietf-quic-transport-10](https://datatracker.ietf.org/doc/draft-ietf-quic-transport/10/)实现，无法保证所有QUIC版本的兼容性，建议充分测试后再用于生产环境。
+
 **说明：** 
 
 一致性哈希（CH）算法目前仅支持以下地域：
 
-        -   印度（孟买）
         -   日本（东京）
-        -   新加坡
         -   澳大利亚（悉尼）
         -   马来西亚（吉隆坡）
         -   印度尼西亚（雅加达）
@@ -110,7 +111,7 @@ UDP协议多用于关注实时性而相对不注重可靠性的场景，如视�
 
 2.  单击**下一步**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16161/15421808787426_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16161/15430510917426_zh-CN.png)
 
 
 ## 步骤三 添加后端服务器 {#section_ylm_3qn_42b .section}
@@ -121,11 +122,11 @@ UDP协议多用于关注实时性而相对不注重可靠性的场景，如视�
 
 1.  选择**默认服务器组**，单击**添加**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/154218087810030_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/154305109110030_zh-CN.png)
 
 2.  选择要添加的ECS实例，然后单击**加入待添加篮**。单击**确定**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/15421808787499_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/15430510917499_zh-CN.png)
 
 3.  配置添加的后端服务器的端口和权重。
     -   端口
@@ -138,7 +139,7 @@ UDP协议多用于关注实时性而相对不注重可靠性的场景，如视�
 
         **说明：** 权重设置为0，该服务器不会再接受新请求。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/15421808787504_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/15430510917504_zh-CN.png)
 
 4.  单击**下一步**。
 
@@ -146,7 +147,7 @@ UDP协议多用于关注实时性而相对不注重可靠性的场景，如视�
 
 负载均衡通过健康检查来判断后端服务器（ECS实例）的业务可用性。健康检查机制提高了前端业务整体可用性，避免了后端ECS异常对总体服务的影响。单击**修改**更改健康检查配置，详情参见[配置健康检查](intl.zh-CN/用户指南/健康检查/配置健康检查.md#)。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/154218087810032_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/154305109110032_zh-CN.png)
 
 ## 步骤五 提交配置 {#section_ey5_lqn_42b .section}
 
@@ -156,12 +157,12 @@ UDP协议多用于关注实时性而相对不注重可靠性的场景，如视�
 2.  确认无误后，单击**提交**。
 3.  在配置审核页面，配置成功后，单击**确定**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/154218087810033_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/154305109110033_zh-CN.png)
 
 
 配置成功后，您可以在监听页面查看已创建的监听。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/154218087810034_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/154305109110034_zh-CN.png)
 
 ## 相关操作 {#section_pz4_2pn_42b .section}
 
