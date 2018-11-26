@@ -19,7 +19,7 @@ Where:
 -   Version: The version of the API to call. The SLB API version is 2014-05-15.
 -   Parameters: Request parameters. Use “&” to separate multiple parameters.
 
-    Request parameters consist of common parameters and API specific parameters. Common parameters include VPI version, credentials and so on. For more information, see [Common parameters](reseller.en-US/Developer Guide/Common parameters.md).
+    Request parameters consist of common parameters and API specific parameters. Common parameters include API version, credentials and so on. For more information, see [Common parameters](reseller.en-US/Developer Guide/Common parameters.md).
 
 
 The following is an example using the DescribeLoadBalancers API to query the created SLB instances:
