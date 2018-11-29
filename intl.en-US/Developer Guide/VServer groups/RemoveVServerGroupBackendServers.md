@@ -56,9 +56,9 @@ https://slb.aliyuncs.com/?Action=RemoveVServerGroupBackendServers
 &common request parameters
 ```
 
-**返回示例**
+**Response example**
 
--   XML格式
+-   XML format
 
     ```
     <? xml version="1.0" encoding="utf-8"? >
