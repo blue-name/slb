@@ -24,21 +24,21 @@ Alibaba Cloud Server Load Balancer provides the function of obtaining the real I
 2.  Copy the F5XFFHttpModule.dll and F5XFFHttpModule.ini files from the x86\\Release or x64\\Release directory of your server to a specified directory, such as C:\\F5XForwardedFor\\. Make sure that the IIS process has the write permission to this folder.
 3.  Open the **IIS Manager** and double-click the **Modules** function.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4171/15415040903132_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4171/15434953923132_en-US.png)
 
 4.  Click **Configure Native Modules**, and then click **Register** in the displayed dialog box.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4171/15415040903133_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4171/15434953923133_en-US.png)
 
 5.  Add the downloaded .dll file.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4171/15415040903135_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4171/15434953923135_en-US.png)
 
 6.  Add the ISAPI and CGI restrictions for the added files and set the restrictions to Allowed.
 
     **Note:** Make sure that you have installed the ISAPI and CGI applications.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4171/15415040903136_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4171/15434953923136_en-US.png)
 
 7.  Restart the IIS Manager.
 
