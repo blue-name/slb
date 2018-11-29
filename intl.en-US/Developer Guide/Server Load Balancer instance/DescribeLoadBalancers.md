@@ -80,7 +80,7 @@ Query created SLB instances.
 |InternetChargeType|String|The billing method used for the Internet SLB instance. Valid value:-   paybybandwidth: Pay by bandwidth
 -   paybytraffic: Pay by traffic \(default\)
 
-**Note:** 当PayType参数的值为PrePay时，只支持按带宽计费。
+**Note:** When the value of the PayType parameter is PrePay, only billing by bandwidth is supported.
 
 |
 |PayType|String|The billing method of the SLB instance. Valid value:-   PayOnDemand: Pay-As-You-Go
