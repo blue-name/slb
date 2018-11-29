@@ -20,7 +20,7 @@ Modify the specification of a guaranteed-performance SLB instance.
 -   slb.s3.medium
 -   slb.s3.large
 
-The available specifications vary by region. For more information, see [Guaranteed-performance instances](../../../../reseller.en-US/User Guide/SLB instances/Guaranteed-performance instances.md#).
+The available specifications vary by region. For more information, see [Guaranteed-performance instances](../../../../reseller.en-US/Archives/User Guide (Old Console)/SLB instances/Guaranteed-performance instances.md#).
 
 **Note:** When you change a shared-performance instance to a guaranteed-performance instance, a brief disconnection of service may occur for 10 to 30 seconds. We recommend that you perform this operation when the traffic is low or use GSLB to schedule the service to other SLB instances first.
 
@@ -31,7 +31,7 @@ The available specifications vary by region. For more information, see [Guarante
 |Name|Type|Description|
 |:---|:---|:----------|
 |RequestId|String|The ID of the request.|
-|orderId|String|预付费实例的订单ID。|
+|orderId|String|The order ID of the Subscription instance.|
 
 ## Examples {#section_ix5_h1g_cz .section}
 
