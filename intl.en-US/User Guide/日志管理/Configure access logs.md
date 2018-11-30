@@ -61,7 +61,7 @@ To configure access logs, complete these steps.
 
     **Note:** Make sure that the name of the LogProject is globally unique and the region of the LogProject is the same as that of the Server Load Balancer instance.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15681/15421814297478_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15681/15435653947478_en-US.png)
 
 
 ## Search and analyze access logs {#section_od1_l4s_vdb .section}
@@ -93,18 +93,15 @@ To search access logs, complete these steps:
 
         On the Access Logs page, click **View Logs**.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15681/15421814297479_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15681/15435653947479_en-US.png)
 
     -   From the Log Service Console:
 
         On the Logstores page, click **Search** of the target Logstore.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15681/154218142912838_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15681/154356539412838_en-US.png)
 
 2.  Click the target log field to view detailed information.
-
-    ![](images/12857_en-US.png)
-
 3.  Enter an SQL statement to query access logs.
 
     For example, enter the following SQL statement to query the Top20 clients, which is used for analyzing the request resource to assist business decision-making.
@@ -114,7 +111,7 @@ To search access logs, complete these steps:
           client_ip_province order by pv desc limit 50
     ```
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4150/15421814292494_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4150/15435653942494_en-US.png)
 
 
 ## Analyze access logs {#section_cvs_xps_vdb .section}
@@ -126,7 +123,7 @@ To analyze access logs, complete these steps:
 1.  On the Log Service console, click the project link of the SLB instance.
 2.  In the left-side navigation pane, click **Search/Analytics - Query** \> **Dashboard**, and then click the name of the access log.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15681/154218142912867_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15681/154356539412867_en-US.png)
 
 
 ## Disable access logging {#section_vgd_kqs_vdb .section}
@@ -138,7 +135,7 @@ To disable access logging, complete these steps:
 3.  Select a region.
 4.  On the Access Logs page, find the target instance and click **Delete** to disable access logging.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15681/15421814297480_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15681/15435653947480_en-US.png)
 
 5.  In the displayed dialog box, click **OK**.
 
