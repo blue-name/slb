@@ -16,11 +16,11 @@ HTTP协议适用于需要加密传输的应用。您可以添加一个HTTPS监�
 4.  选择以下一种方法，打开监听配置向导：
     -   在实例管理页面，找到目标实例，然后单击**添加配置向导**。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/154399416310004_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/154399588510004_zh-CN.png)
 
     -   在实例管理页面，单击目标实例ID。在监听页面，单击**添加监听**。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16161/15439941637399_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16161/15439958857399_zh-CN.png)
 
 
 ## 步骤二 配置协议监听 {#section_ly4_2pn_42b .section}
@@ -110,11 +110,11 @@ HTTP协议适用于需要加密传输的应用。您可以添加一个HTTPS监�
     |**获取真实IP**|HTTP监听通过 X-Forwarded-For获取客户端真实IP。|
     |**创建完毕自动启动监听**|是否在监听配置完成后启动负载均衡监听，默认开启。|
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16604/154399416311858_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16604/154399588511858_zh-CN.png)
 
 2.  单击**下一步**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16604/154399416310035_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16604/154399588510035_zh-CN.png)
 
 
 ## 步骤三 配置SSL证书 {#section_m52_pxn_42b .section}
@@ -154,11 +154,11 @@ HTTP协议适用于需要加密传输的应用。您可以添加一个HTTPS监�
 
 1.  选择已上传的服务器证书，或单击**新建服务器证书**上传一个服务器证书。
 
-    详情参见[上传证书](intl.zh-CN/用户指南/证书管理/上传证书.md#)。
+    详情参见[创建证书](intl.zh-CN/用户指南/证书管理/创建证书.md#)。
 
 2.  如果您要开启HTTPS双向认证，单击**修改**，开启双向认证。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16604/15439941649566_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16604/15439958859566_zh-CN.png)
 
 3.  选择一个已上传的CA证书，或单击**新建CA证书**上传一个CA证书。
 
@@ -173,11 +173,11 @@ HTTP协议适用于需要加密传输的应用。您可以添加一个HTTPS监�
 
 1.  选择**默认服务器组**，单击**添加**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16604/154399416410036_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16604/154399588510036_zh-CN.png)
 
 2.  选择要添加的ECS实例，然后单击**加入待添加篮**。单击**确定**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/15439941647499_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/15439958857499_zh-CN.png)
 
 3.  配置添加的后端服务器的端口和权重。
     -   端口
@@ -190,7 +190,7 @@ HTTP协议适用于需要加密传输的应用。您可以添加一个HTTPS监�
 
         **说明：** 权重设置为0，该服务器不会再接受新请求。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/15439941647504_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/15439958867504_zh-CN.png)
 
 4.  单击**下一步**。
 
@@ -198,7 +198,7 @@ HTTP协议适用于需要加密传输的应用。您可以添加一个HTTPS监�
 
 负载均衡通过健康检查来判断后端服务器（ECS实例）的业务可用性。健康检查机制提高了前端业务整体可用性，避免了后端ECS异常对总体服务的影响。单击**修改**更改健康检查配置，详情参见[配置健康检查](intl.zh-CN/用户指南/健康检查/配置健康检查.md#)。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16604/154399416410037_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16604/154399588610037_zh-CN.png)
 
 ## 步骤六 提交配置 {#section_hwm_qnn_42b .section}
 
@@ -207,12 +207,12 @@ HTTP协议适用于需要加密传输的应用。您可以添加一个HTTPS监�
 1.  在审核提交页面，检查监听配置，您可以单击**修改**更改配置。确认无误后，单击**提交**。
 2.  在配置审核页面，在配置成功后，单击**确定**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16604/154399416410038_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16604/154399588610038_zh-CN.png)
 
 
 配置成功后，您可以在监听页面查看已创建的监听。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16604/154399416410039_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16604/154399588610039_zh-CN.png)
 
 ## 相关操作 {#section_pz4_2pn_42b .section}
 
