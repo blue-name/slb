@@ -112,22 +112,6 @@
 |[DescribeCACertificates](intl.zh-CN/API参考/服务器证书/DescribeCACertificates.md#)|查询已上传的CA证书。|
 |[SetCACertificateName](intl.zh-CN/API参考/服务器证书/SetCACertificateName.md#)|设置CA证书名称。|
 
-## 日志API {#section_f4r_grj_s2b .section}
-
-|API|描述|
-|---|--|
-|**访问日志**|
-|[SetAccessLogsDownloadAttribute](intl.zh-CN/API参考/访问日志/SetAccessLogsDownloadAttribute.md#)|添加访问日志转发规则。|
-|[DeleteAccessLogsDownloadAttribute](intl.zh-CN/API参考/访问日志/DeleteAccessLogsDownloadAttribute.md#)|删除访问日志转发规则。|
-|[DescribeAccessLogsDownloadAttribute](intl.zh-CN/API参考/访问日志/DescribeAccessLogsDownloadAttribute.md#)|查询访问日志转发规则。|
-|**健康检查日志**|
-|[SetLogsDownloadAttribute](intl.zh-CN/API参考/健康检查日志/SetLogsDownloadAttribute.md#)|设置日志健康检查功能。|
-|[DescribeLogsDownloadAttribute](intl.zh-CN/API参考/健康检查日志/DescribeLogsDownloadAttribute.md#)|查询日志健康检查功能。|
-|[DeleteLogsDownloadAttribute](intl.zh-CN/API参考/健康检查日志/DeleteLogsDownloadAttribute.md#)|删除日志健康检查功能。|
-|[SetLogsDownloadStatus](intl.zh-CN/API参考/健康检查日志/SetLogsDownloadStatus.md#)|设置日志健康检查状态开关。|
-|[DescribeLogsDownloadStatus](intl.zh-CN/API参考/健康检查日志/DescribeLogsDownloadStatus.md#)|查询日志健康检查状态开关。|
-|[DescribeRealtimeLogs](intl.zh-CN/API参考/健康检查日志/DescribeRealtimeLogs.md#)|查询健康检查日志。|
-
 ## 查询资源约束API {#section_vws_rvp_y2b .section}
 
 |API|描述|
