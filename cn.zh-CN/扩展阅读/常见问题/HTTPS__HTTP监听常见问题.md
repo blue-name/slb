@@ -93,7 +93,8 @@ SNI（Server Name Indication）是为了解决一个服务器使用多个域名�
 
 ## 16. HTTP/HTTPS监听访问后端服务器的HTTP协议版本是什么？ {#section_aw5_pyx_wdb .section}
 
-HTTP/1.0。
+-   客户端请求的协议为HTTP/1.1或者HTTP2/0版本时，七层监听访问后端服务器的HTTP协议版本是HTTP/1.1
+-   客户端请求的协议为除HTTP/1.1和HTTP2/0以外其他版本时，七层监听访问后端服务器的HTTP协议版本是HTTP/1.0
 
 ## 17. 后端服务器能否获取客户端访问HTTP/HTTPS监听的协议版本？ {#section_bw5_pyx_wdb .section}
 
