@@ -6,8 +6,8 @@ Remove backend servers from a VServer group.
 
 ## Request parameters {#section_v5w_nds_cz .section}
 
-|Name|Parameters|Required|Description|
-|:---|:---------|:-------|:----------|
+|Name|Type|Required|Description|
+|:---|:---|:-------|:----------|
 |Action |String| Yes|The action to perform. Valid value:RemoveVServerGroupBackendServers
 
 |
@@ -21,8 +21,8 @@ Remove backend servers from a VServer group.
 
 |
 
-|Name|Parameters|Required| Description|
-|:---|:---------|:-------|:-----------|
+|Name|Type|Required| Description|
+|:---|:---|:-------|:-----------|
 |ServerId|String| Yes|The ID of the ECS instance.|
 |Port|Integer|Yes|The port used by the backend server.Valid value: 1-65535
 
