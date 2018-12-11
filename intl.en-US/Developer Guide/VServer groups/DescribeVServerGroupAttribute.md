@@ -4,8 +4,8 @@ Query detailed information of a VServer group.
 
 ## Request parameters {#section_v5w_nds_cz .section}
 
-|Name|Parameters|Required| Description|
-|:---|:---------|:-------|:-----------|
+|Name|Type|Required| Description|
+|:---|:---|:-------|:-----------|
 |Action|String| Yes|The action to perform. Valid value:DescribeVServerGroupAttribute
 
 |
