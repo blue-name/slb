@@ -53,7 +53,7 @@ https://slb.aliyuncs.com/?Action=RemoveVServerGroupBackendServers
     {"ServerId":"vm-233","Port":"80","Weight":"100","Type":"ecs},
     {"ServerId":"vm-232","Port":"90","Weight":"100","Type":"ecs},
 ]
-&common request parameters
+&CommonParameters
 ```
 
 **Response example**
