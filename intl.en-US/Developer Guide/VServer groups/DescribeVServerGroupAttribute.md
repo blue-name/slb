@@ -16,15 +16,15 @@ Query detailed information of a VServer group.
 
 ## Response parameters {#section_ssd_pds_cz .section}
 
-|Name|Type|Required|
-|:---|:---|:-------|
+|Name|Type|Description|
+|:---|:---|:----------|
 |RequestId|String|The ID of the request.|
 |VServerGroupId|String|The ID of the VServer group.|
 |VServerGroupName|String|The name of the VServer group.|
 |BackendServers|List|A list of backend servers.|
 
-|Name |Type|Required|
-|:----|:---|:-------|
+|Name |Type|Description|
+|:----|:---|:----------|
 |ServerId|String|The ID of the ECS instance.|
 |Port|Integer|The port of the backend server.|
 |Weight|Integer|The weight of the backend server.|
