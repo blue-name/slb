@@ -40,7 +40,7 @@ Remove backend servers from a VServer group.
 |VServerGroupId|String|The ID of the VServer group.|
 |Backendservers|List|The list of backend servers.|
 
-## Samples {#section_oxr_pds_cz .section}
+## Examples {#section_oxr_pds_cz .section}
 
 **Request example**
 
