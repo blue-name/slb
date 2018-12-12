@@ -10,11 +10,11 @@
 -   [6. HTTP监听向后端ECS实例执行健康检查使用的方法是什么？](intl.zh-CN/常见问题/ 健康检查FAQ.md#section_xn3_sqx_wdb)
 -   [7. HTTP监听向后端ECS实例执行健康检查的IP地址是什么？](intl.zh-CN/常见问题/ 健康检查FAQ.md#section_yn3_sqx_wdb)
 -   [8. 为什么健康检查监控频率与web日志记录不一致？](intl.zh-CN/常见问题/ 健康检查FAQ.md#section_zn3_sqx_wdb)
--   [ZH-CN\_TP\_4287.md\#section\_kt3\_knx\_wdb](intl.zh-CN/常见问题/后端服务器FAQ.md#section_kt3_knx_wdb)
--   [ZH-CN\_TP\_4287.md\#section\_lt3\_knx\_wdb](intl.zh-CN/常见问题/后端服务器FAQ.md#section_lt3_knx_wdb)
--   [5. ECS实例上没有配置压缩，为什么从负载均衡返回的响应却被压缩了?](intl.zh-CN/常见问题/后端服务器FAQ.md#section_ot3_knx_wdb)
--   [6. ECS实例使用了HTTP1.0是否支持chunked transfer传输编码？](intl.zh-CN/常见问题/后端服务器FAQ.md#section_pt3_knx_wdb)
-
+-   [9. 健康检查是否会消耗系统资源？](intl.zh-CN/常见问题/ 健康检查FAQ.md#section_b43_sqx_wdb)
+-   [10. 负载均衡因后端数据库故障导致健康检查失败，如何处理？](intl.zh-CN/常见问题/ 健康检查FAQ.md#section_d43_sqx_wdb)
+-   [11. 负载均衡服务TCP端口健康检查成功，为什么在后端业务日志中出现网络连接异常信息？](#section_11)
+-   [12. 为什么业务本身没有异常但是健康检查显示异常？](intl.zh-CN/常见问题/ 健康检查FAQ.md#section_ldb_5sx_wdb)
+-   
 ## 1. 健康检查的原理是什么？ {#section_m43_1qx_wdb .section}
 
 负载均衡通过健康检查来探测后端ECS实例的可用性。开启健康检查功能后，当后端某个ECS实例健康检查出现异常时，来自客户端的新请求将不会再被转发到该ECS实例，直到该ECS实例恢复正常。
@@ -23,7 +23,7 @@
 
 更多详细信息，参考[负载均衡健康检查原理](../intl.zh-CN/历史文档/用户指南（旧版控制台）/监听/健康检查/健康检查介绍.md#)。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4288/15445245383226_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4288/15446040183226_zh-CN.png)
 
 ## 2. 推荐的健康检查配置是什么？ {#section_jhf_jqx_wdb .section}
 
@@ -105,13 +105,13 @@ ECS实例内配置了两个网站，www.test.com是静态网站，app.test.com�
 
 将负载均衡健康检查域名配置为www.test.com即可。
 
-## 11. 负载均衡服务TCP端口健康检查成功，为什么在后端业务日志中出现网络连接异常信息？ { .section}
+## 11. 负载均衡服务TCP端口健康检查成功，为什么在后端业务日志中出现网络连接异常信息？ {#section_11 .section}
 
 问题现象：
 
 负载均衡后端配置TCP服务端口后，后端业务日志中频繁出现类似如下网络连接异常错误信息。经进抓包分析，发现相关请求来自负载均衡服务器，同时负载均衡主动向服务器发送了RST数据包。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4288/15445245383231_zh-CN.jpg)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4288/15446040183231_zh-CN.jpg)
 
 问题原因：
 
@@ -152,5 +152,5 @@ Tengine/Nginx配置会发现curl没有问题，但是echo测试会匹配到默�
 -   修改主配置文件，将默认站点注释掉。
 -   在健康检查配置中添加检查域名。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4288/15445245383234_zh-CN.jpg)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4288/15446040183234_zh-CN.jpg)
 
