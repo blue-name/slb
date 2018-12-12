@@ -16,7 +16,7 @@
 
 ## 1. 负载均衡实例如何计费？ {#section_tjm_3mx_wdb .section}
 
-参考[按量计费](../../../../intl.zh-CN/产品定价/按量计费.md#)。
+参考[按量计费](../../../../intl.zh-CN/产品定价/按量计费.md#)
 
 ## 2. 负载均衡是否对入流量计费？ {#section_bhr_jmx_wdb .section}
 
