@@ -19,23 +19,23 @@ Note the following before adding a UDP listener:
 
 ## Prerequisites {#section_tx3_vqn_42b .section}
 
-[Create an SLB instance](reseller.en-US/User Guide/Server Load Balancer instance/Create an SLB instance.md#).
+[Create an SLB instance](intl.en-US/User Guide/Server Load Balancer instance/Create an SLB instance.md#).
 
 ## Step 1 Open the listener configuration wizard {#section_wx3_5qn_42b .section}
 
 To open the listener configuration wizard, complete these steps:
 
-1.  Log on to the [SLB console](https://partners-intl.aliyun.com/login-required#/slb).
+1.  Log on to the [SLB console](https://slb.console.aliyun.com).
 2.  In the left-side navigation pane, select **Instances** \> **Server Load Balancer**.
 3.  Select the region of the instance.
 4.  Select one of the following methods to open the listener configuration wizard:
     -   On the Server Load Balancer page, find the target instance and then click **Configure Listener**.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/154218088510004_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/154503303210004_en-US.png)
 
     -   On the Server Load Balancer page, click the ID of the target SLB instance. On the Listeners page, click **Add Listener**.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16161/15421808857399_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16161/15450330327399_en-US.png)
 
 
 ## Step 2 Configure a UDP listener {#section_ly4_2pn_42b .section}
@@ -63,21 +63,22 @@ To configure a UDP listener, complete these steps:
         -   **Source IP**: The consistent hash based on the source IP address. The same source IP addresses are scheduled to the same backend server.
         -   **Tuple**: The consistent hash based on the quaternion \(source IP + destination IP + source port + destination port\). The same steams are scheduled to the same backend server.
         -   **QUIC ID**: Consistent hash based on the QUIC Connection ID. The same QUIC Connection IDs are scheduled to the same backend server.
+
+**Note:** The QuIC protocol is rapidly evolving, and the algorithm is based on [draft-ietf-quic-transport-10](https://datatracker.ietf.org/doc/draft-ietf-quic-transport/10/) and does not guarantee the compatibility of all QUIC versions. We recommend that you do enough tests before using it for the production environment.
+
 **Note:** 
 
 The consistency Hash \(CH\) algorithm is only supported in the following areas currently:
 
-        -   India \(Mumbai\)
         -   Japan \(Tokyo\)
-        -   Singapore
         -   Australia \(Sydney\)
         -   Malaysia \(Kuala Lumpur\)
         -   Indonesia \(Jakarta\)
         -   Germany \(Frankfurt\)
-        -   USA \(Silicon Valley\)
+        -   US \(Silicon Valley\)
         -   US \(Virginia\)
         -   UAE \(Dubai\)
-        -   China \(Huhhot\)
+        -   China \(Hohhot\)
 |
     |**Enable Access Control**|Select whether to enable the access control function.|
     |**Access Control Method**| Select an access control method after enabling the access control function:
@@ -91,7 +92,7 @@ Enabling whitelist poses some business risks. After a whitelist is configured, o
 If you enable a blacklist without adding any IP entry in the corresponding access control list, all requests are forwarded.
 
  |
-    |**Access Control List**|Select an access control list as the whitelist or the blacklist.**Note:** An IPv6 instance can only bind IPv6 access control lists and an IPv4 instance can only bind IPv4 access control lists. For more information, see [Configure an access control list](reseller.en-US/Archives/User Guide (Old Console)/Access control/Configure an access control list.md#).
+    |**Access Control List**|Select an access control list as the whitelist or the blacklist.**Note:** An IPv6 instance can only bind IPv6 access control lists and an IPv4 instance can only bind IPv4 access control lists. For more information, see [Configure an access control list](intl.en-US/Archives/User Guide (Old Console)/Access control/Configure an access control list.md#).
 
 |
     |**Enable Peak Bandwidth Limit**| Select whether to configure the listener bandwidth.
@@ -110,22 +111,22 @@ If you enable a blacklist without adding any IP entry in the corresponding acces
 
 2.  Click **Next**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16161/15421808857426_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16161/15450330327426_en-US.png)
 
 
 ## Step 3 Add backend servers {#section_ylm_3qn_42b .section}
 
-Add backend servers to process requests. You can use the default server group configured for the instance, or configure a VServer group or an active/standby server group for the listener. For more information, see [Backend server overview](reseller.en-US/User Guide/后端服务器/Backend server overview.md#).
+Add backend servers to process requests. You can use the default server group configured for the instance, or configure a VServer group or an active/standby server group for the listener. For more information, see [Backend server overview](intl.en-US/User Guide/后端服务器/Backend server overview.md#).
 
 In this tutorial, the default server group is used:
 
 1.  Select **Default Server Group** and then click **Add**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/154218088510030_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/154503303210030_en-US.png)
 
 2.  Select the ECS instances to add and then click **Add to Selected Server List**. Click **OK**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/15421808857499_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/15450330327499_en-US.png)
 
 3.  Configure the ports and weights of the added backend servers.
     -   Port
@@ -138,15 +139,15 @@ In this tutorial, the default server group is used:
 
         **Note:** If the weight is set to 0, no requests will be sent to the ECS instance.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/15421808857504_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/15450330327504_en-US.png)
 
 4.  Click **Next**.
 
 ## Step 4 Configure health check {#section_ay4_jqn_42b .section}
 
-Server Load Balancer checks the service availability of the backend servers \(ECS instances\) by performing health checks. The health check function improves the overall availability of your services and avoids the impact of backend server failures. Click **Modify** to change health check configurations. For more information, see [Configure health check](reseller.en-US/User Guide/Health check/Configure health check.md#).
+Server Load Balancer checks the service availability of the backend servers \(ECS instances\) by performing health checks. The health check function improves the overall availability of your services and avoids the impact of backend server failures. Click **Modify** to change health check configurations. For more information, see [Configure health check](intl.en-US/User Guide/Health check/Configure health check.md#).
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/154218088510032_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/154503303210032_en-US.png)
 
 ## Step 5 Submit the configurations {#section_ey5_lqn_42b .section}
 
@@ -156,18 +157,18 @@ To confirm the listener configurations, complete these steps:
 2.  Click **Submit**.
 3.  On the Submit page, click **OK** after the configurations are successful.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/154218088510033_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/154503303210033_en-US.png)
 
 
 After the configurations are successful, you can view the created listener on the Listeners page.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/154218088510034_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/16139/154503303210034_en-US.png)
 
 ## Related operations {#section_pz4_2pn_42b .section}
 
--   [Configure health check](reseller.en-US/User Guide/Health check/Configure health check.md#)
--   [Manage a default server group](reseller.en-US/User Guide/后端服务器/Manage a default server group.md#)
--   [Manage a VServer group](reseller.en-US/User Guide/后端服务器/Manage a VServer group.md#)
--   [Manage an active/standby server group](reseller.en-US/User Guide/后端服务器/Manage an active__standby server group.md#)
--   [Configure access control](reseller.en-US/User Guide/Access control/Configure access control.md#)
+-   [Configure health check](intl.en-US/User Guide/Health check/Configure health check.md#)
+-   [Manage a default server group](intl.en-US/User Guide/后端服务器/Manage a default server group.md#)
+-   [Manage a VServer group](intl.en-US/User Guide/后端服务器/Manage a VServer group.md#)
+-   [Manage an active/standby server group](intl.en-US/User Guide/后端服务器/Manage an active__standby server group.md#)
+-   [Configure access control](intl.en-US/User Guide/Access control/Configure access control.md#)
 
