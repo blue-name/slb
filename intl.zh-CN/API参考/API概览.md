@@ -5,7 +5,6 @@
 |API|描述|
 |:--|:-|
 |[CreateLoadBalancer](intl.zh-CN/API参考/负载均衡实例/CreateLoadBalancer.md#)|创建负载均衡实例。|
-|[ModifyLoadBalancerInternetSpec](intl.zh-CN/API参考/负载均衡实例/ModifyLoadBalancerInternetSpec.md#)|修改负载均衡实例的计费方式或规格。|
 |[DeleteLoadBalancer](intl.zh-CN/API参考/负载均衡实例/DeleteLoadBalancer.md#)|删除负载均衡实例。|
 |[SetLoadBalancerStatus](intl.zh-CN/API参考/负载均衡实例/SetLoadBalancerStatus.md#)|设置负载均衡实例的状态。|
 |[SetLoadBalancerName](intl.zh-CN/API参考/负载均衡实例/SetLoadBalancerName.md#)|修改负载均衡实例的名称。|
@@ -21,11 +20,11 @@
 |:--|:-|
 |**TCP监听**|
 |[CreateLoadBalancerTCPListener](intl.zh-CN/API参考/TCP监听/CreateLoadBalancerTCPListener.md#)|创建TCP监听。|
-|[SetLoadBalancerTCPListenerAttribute](intl.zh-CN/API参考/TCP监听/SetLoadBalancerTCPListenerAttribute.md#)|修改TPC监听的配置。|
+|[SetLoadBalancerTCPListenerAttribute](intl.zh-CN/API参考/TCP监听/SetLoadBalancerTCPListenerAttribute.md#)|修改TCP监听的配置。|
 |[DescribeLoadBalancerTCPListenerAttribute](intl.zh-CN/API参考/TCP监听/DescribeLoadBalancerTCPListenerAttribute.md#)|查询TCP监听配置。|
 |**UDP监听**|
 |[CreateLoadBalancerUDPListener](intl.zh-CN/API参考/UDP监听/CreateLoadBalancerUDPListener.md#)|创建UDP监听。|
-|[ZH-CN\_TP\_4216.md\#](intl.zh-CN/API参考/UDP监听/SetLoadBalancerUDPListenerAttribute.md#)|修改UDP监听的配置。|
+|[SetLoadBalancerUDPListenerAttribute](intl.zh-CN/API参考/UDP监听/SetLoadBalancerUDPListenerAttribute.md#)|修改UDP监听的配置。|
 |[DescribeLoadBalancerUDPListenerAttribute](intl.zh-CN/API参考/UDP监听/DescribeLoadBalancerUDPListenerAttribute.md#)|查询UDP监听配置。|
 |**HTTP监听**|
 |[CreateLoadBalancerHTTPListener](intl.zh-CN/API参考/HTTP监听/CreateLoadBalancerHTTPListener.md#)|创建HTTP监听。|
@@ -50,7 +49,7 @@
 |[DescribeRules](intl.zh-CN/API参考/转发规则/DescribeRules.md#)|查询指定监听已配置的转发规则。|
 |[DescribeRuleAttribute](intl.zh-CN/API参考/转发规则/DescribeRuleAttribute.md#)|查询指定转发规则的配置详情。|
 |**域名扩展（Beta）**|
-|[CreateDomainExtension](intl.zh-CN/API参考/域名扩展（Beta）/CreateDomainExtension.md#)|创建扩展域名。|
+|[ZH-CN\_TP\_15373.md\#](intl.zh-CN/API参考/域名扩展（Beta）/CreateDomainExtension.md#)|创建扩展域名。|
 |[SetDomainExtensionAttribute](intl.zh-CN/API参考/域名扩展（Beta）/SetDomainExtensionAttribute.md#)|设置已添加的扩展域名。|
 |[DescribeDomainExtensions](intl.zh-CN/API参考/域名扩展（Beta）/DescribeDomainExtensions.md#)|查询已添加的扩展域名。|
 |[DeleteDomainExtension](intl.zh-CN/API参考/域名扩展（Beta）/DeleteDomainExtension.md#)|删除已添加的扩展域名。|
@@ -107,7 +106,7 @@
 |[DeleteServerCertificate](intl.zh-CN/API参考/服务器证书/DeleteServerCertificate.md#)|删除服务器证书。|
 |[DescribeServerCertificates](intl.zh-CN/API参考/服务器证书/DescribeServerCertificates.md#)|查询已上传的服务器证书。|
 |[SetServerCertificateName](intl.zh-CN/API参考/服务器证书/SetServerCertificateName.md#)|设置服务器证书名称。|
-|[UploadCACertificate](intl.zh-CN/API参考/服务器证书/UploadCACertificate.md#)|上传CA证书。|
+|[ZH-CN\_TP\_4198.md\#](intl.zh-CN/API参考/服务器证书/UploadCACertificate.md#)|上传CA证书。|
 |[DeleteCACertificate](intl.zh-CN/API参考/服务器证书/DeleteCACertificate.md#)|删除CA证书。|
 |[DescribeCACertificates](intl.zh-CN/API参考/服务器证书/DescribeCACertificates.md#)|查询已上传的CA证书。|
 |[SetCACertificateName](intl.zh-CN/API参考/服务器证书/SetCACertificateName.md#)|设置CA证书名称。|
