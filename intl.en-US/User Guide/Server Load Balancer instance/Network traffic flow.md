@@ -19,6 +19,9 @@ SLB distributes incoming traffic according to forwarding rules configured on the
 SLB communicates with backend ECS instances through the intranet.
 
 -   If the backend ECS instances only need to handle the traffic distributed from SLB, no public bandwidth \(EIP, NAT Gateway and public IP\) is required.
+
+    If the ECS instance already has a public IP, but only processes requests from SLB, no fee is generated.
+
 -   However, if you want to provide external services from a backend ECS instance, or the backend ECS instance needs to access the Internet, you must configure a public IP, an EIP or a NAT Gateway.
 
 The outbound network traffic flow is shown as [Figure 2](#fig_s3w_zmt_h2b).
