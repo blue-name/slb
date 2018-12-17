@@ -49,7 +49,7 @@
 |[DescribeRules](intl.zh-CN/API参考/转发规则/DescribeRules.md#)|查询指定监听已配置的转发规则。|
 |[DescribeRuleAttribute](intl.zh-CN/API参考/转发规则/DescribeRuleAttribute.md#)|查询指定转发规则的配置详情。|
 |**域名扩展（Beta）**|
-|[ZH-CN\_TP\_15373.md\#](intl.zh-CN/API参考/域名扩展（Beta）/CreateDomainExtension.md#)|创建扩展域名。|
+|[CreateDomainExtension](intl.zh-CN/API参考/域名扩展（Beta）/CreateDomainExtension.md#)|创建扩展域名。|
 |[SetDomainExtensionAttribute](intl.zh-CN/API参考/域名扩展（Beta）/SetDomainExtensionAttribute.md#)|设置已添加的扩展域名。|
 |[DescribeDomainExtensions](intl.zh-CN/API参考/域名扩展（Beta）/DescribeDomainExtensions.md#)|查询已添加的扩展域名。|
 |[DeleteDomainExtension](intl.zh-CN/API参考/域名扩展（Beta）/DeleteDomainExtension.md#)|删除已添加的扩展域名。|
@@ -106,7 +106,7 @@
 |[DeleteServerCertificate](intl.zh-CN/API参考/服务器证书/DeleteServerCertificate.md#)|删除服务器证书。|
 |[DescribeServerCertificates](intl.zh-CN/API参考/服务器证书/DescribeServerCertificates.md#)|查询已上传的服务器证书。|
 |[SetServerCertificateName](intl.zh-CN/API参考/服务器证书/SetServerCertificateName.md#)|设置服务器证书名称。|
-|[ZH-CN\_TP\_4198.md\#](intl.zh-CN/API参考/服务器证书/UploadCACertificate.md#)|上传CA证书。|
+|[UploadCACertificate](intl.zh-CN/API参考/服务器证书/UploadCACertificate.md#)|上传CA证书。|
 |[DeleteCACertificate](intl.zh-CN/API参考/服务器证书/DeleteCACertificate.md#)|删除CA证书。|
 |[DescribeCACertificates](intl.zh-CN/API参考/服务器证书/DescribeCACertificates.md#)|查询已上传的CA证书。|
 |[SetCACertificateName](intl.zh-CN/API参考/服务器证书/SetCACertificateName.md#)|设置CA证书名称。|
