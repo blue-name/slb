@@ -25,7 +25,7 @@ Complete these steps to calculate the threshold:
 
 1.  The SLB backstage provides the recommended threshold value that can ensure normal running of the instance according to the purchased bandwidth.
 
-    **Note:** The outbound bandwidth of a Pay-As-You-Go instance is the peak bandwidth in the region. Currently the peak bandwidth in Mainland China is 5G. For more information, see [Peak bandwidths in different regions](intl.en-US/Limits/Peak bandwidths in different regions.md#).
+    **Note:** The outbound bandwidth of a Pay-As-You-Go instance is the peak bandwidth in the region. Currently the peak bandwidth in Mainland China is 5G. For more information, see [Peak bandwidths in different regions](reseller.en-US/Limits/Peak bandwidths in different regions.md#).
 
     -   The relationship between SLB bandwidth and traffic scrubbing threshold \(bits/s\)
         -   When the SLB bandwidth < 100 Mbps, the default traffic scrubbing threshold \(bits/s\) = 120 Mbps
@@ -54,14 +54,14 @@ You can view the thresholds of an instance on the SLB console as a RAM user. If 
 
 To view thresholds, complete these steps:
 
-1.  Log on to the [SLB console](https://slb.console.aliyun.com/).
+1.  Log on to the [SLB console](https://partners-intl.aliyun.com/login-required#/slb).
 2.  Select a region.
 3.  Hover the mouse pointer to the DDoS icon next to the target instance to view the following thresholds. You can click the link to go to the DDoS console to view more information.
     -   Traffic Scrubbing Threshold \(bits/s\): When the inbound traffic exceeds this value, scrubbing is triggered.
     -   Traffic Scrubbing Threshold \(packets/s\): When the inbound packets exceed this value, scrubbing is triggered.
     -   Blackholing Threshold: When the inbound traffic exceeds this value, blackholing is triggered.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15694/15434165687339_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15694/15452113687339_en-US.png)
 
 
 ## Allow read-only access to Anti-DDoS Basic {#section_c4n_wjc_wdb .section}
@@ -73,12 +73,12 @@ To allow read-only access to Anti-DDoS Basic, complete these steps:
 1.  Use the primary account to log on to the RAM console.
 2.  In the left-side navigation pane, click **Users**, find the target RAM user and click **Manage**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4157/15434165682872_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4157/15452113692872_en-US.png)
 
 3.  Click **User Authorization Policies**, and then click **Edit Authorization Policy**.
 4.  In the displayed dialog box, search **AliyunYundunDDosReadOnlyAccess**, and then add it to the Selected Authorization Policy Name list. Click **OK**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4157/15434165682873_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4157/15452113692873_en-US.png)
 
 
 ## View the security credit score {#section_chv_cjy_gfb .section}
@@ -87,12 +87,12 @@ The security credit score is provided by Alibaba Cloud based on your attack hist
 
 Complete these steps to view the security credit score:
 
-1.  Log on to the [Anti-DDoS Basic console](https://yundun.console.aliyun.com/?p=ddosnext#/instance/cn-hangzhou).
+1.  Log on to the [Anti-DDoS Basic console](https://partners-intl.console.aliyun.com/?p=ddosnext#/instance).
 2.  Select **Anti-DDoS Basic** \> **Instances**.
 3.  Click the **Security Credibility** link to view the security credit score of the account.
 
     **Note:** Security credit scores are region-based.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15694/154341656812959_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15694/154521136912959_en-US.png)
 
 
