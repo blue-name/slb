@@ -1,12 +1,12 @@
 # What is Server Load Balancer? {#concept_whs_lp4_tdb .concept}
 
-## Overview {#section_dy5_4qx_k2b .section}
-
 Server Load Balancer \(SLB\) is a traffic distribution control service that distributes the incoming traffic among multiple ECS instances according to the configured forwarding rules. SLB expands application service capabilities and enhances application availability.
+
+## Overview {#section_dy5_4qx_k2b .section}
 
 By setting a virtual service address, SLB virtualizes the added ECS instances into an application service pool with high-performance and high availability, and distributes client requests to ECS instances in the server pool based on forwarding rules.
 
-SLB also checks the health status of the added backend servers, and automatically isolates abnormal ECS instances to eliminate single point of failure \(SPOF\), improving the overall service capability of your application. Additionally, working with Alibaba Anti-DDoS, SLB is able to defend DDoS attacks.
+SLB also checks the health status of the added backend servers, and automatically isolates abnormal ECS instances to eliminate single point of failure \(SPOF\), improving the overall service capability of your application. Additionally, working with Alibaba Anti-DDoS, SLB can defend DDoS attacks.
 
 ## Server Load Balancer consists of the following components: {#section_ppv_hq4_tdb .section}
 
@@ -24,7 +24,7 @@ SLB consists of the following components:
 
     Backend servers are the ECS instances added to a SLB instance to process the distributed requests. You can add ECS instances to the default server group, a VServer group, or an active/standby server group to process distributed requests.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4091/1541385352936_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/4091/1547087514936_en-US.png)
 
 
 ## Benefits {#section_ws5_vq4_tdb .section}
