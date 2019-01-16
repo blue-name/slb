@@ -1,107 +1,127 @@
-# AddBackendServers {#reference_u1m_3pc_ndb .reference}
+# AddBackendServers {#doc_api_903362 .reference}
 
-添加后端服务器。
+调用AddBackendServers添加后端服务器。
 
 **说明：** 如果一次请求中添加多个相同的ECS实例，只会取第一个，其他相同实例会被忽略。
 
-## 请求参数 {#section_v5w_nds_cz .section}
+## 调试 {#apiExplorer .section}
 
-|名称|类型|是否必须|描述|
-|:-|:-|:---|:-|
-|Action|String|是|要执行的操作，取值：AddBackendServers
+单击[这里](https://api.aliyun.com/#product=Slb&api=AddBackendServers)在OpenAPI Explorer中进行可视化调试，并生成SDK代码示例。
 
-|
-|LoadBalancerId|String|是|负载均衡实例的ID。|
-|BackendServers|StringJSON格式的List
+## 请求参数 {#parameters .section}
 
-|是|要添加的后端服务器列表。**说明：** 后端服务器（ECS实例）必须是运行中才可以加入负载均衡实例，一次最多可调用20个后端服务器。
+|名称|类型|是否必选|示例值|描述|
+|--|--|----|---|--|
+|Action|String|是|AddBackendServers|要执行的操作。取值：**AddBackendServers**
 
-|
+ |
+|BackendServers|String|是|\[\{"ServerId":"i-2zej4lxhjoq1icue6kup","Weight":"100"\},\{"ServerId":"i-2ze1u9ywulp5pbvvc7hv","Weight":"100"\}\]|要添加的后端服务器列表。
 
-|名称|类型|是否必须|描述|
-|:-|:-|:---|:-|
-|ServerId|String|是|ECS实例ID。|
-|Weight|Integer|否|后端服务器的权重，取值 ：\[0,100\]默认值为100。如果值为0，则不会将请求转发给该后端服务器。
+ **说明：** 后端服务器（ECS实例）必须是运行中才可以加入负载均衡实例，每次调用最多可添加20个后端服务器。
 
-|
-|Type|String|是|后端服务器类型，取值：-   ecs：ECS实例（默认）
--   eni：弹性网卡实例
+ |
+|LoadBalancerId|String|是|lb-2ze7o5h52g02kkzze7lru|负载均衡实例ID。
 
-|
+ |
+|RegionId|String|是|cn-beijing|负载均衡实例的ID。
 
-## 返回参数 {#section_ssd_pds_cz .section}
+ 您可以通过调用[DescribeRegions](~~27584~~)获取地域ID。
 
-|名称|类型|描述|
-|:-|:-|:-|
-|RequestId|String|请求ID。|
-|LoadBalancerId|String|负载均衡实例ID。|
-|BackendServers|StringJSON格式的List
+ |
+|OwnerAccount|String|否|OwnerAccount|OwnerAccount
 
-|后端服务器列表。|
+ |
 
-|名称|类型|描述|
-|:-|:-|:-|
-|ServerId|String|ECS实例ID。|
-|Weight|Integer|后端服务器的权重。|
+## 返回参数 {#resultMapping .section}
 
-## 示例 {#section_oxr_pds_cz .section}
+|名称|类型|示例值|描述|
+|--|--|---|--|
+|LoadBalancerId|String|lb-2ze7o5h52g02kkzze7lru|负载均衡实例ID。
 
-**请求示例**
+ |
+|BackendServers| | |后端服务器列表。
 
-``` {#public}
-https://slb.aliyuncs.com/?Action=AddBackendServers
-&LoadBalancerId=lb-t4nj5vuz8ish9emfk1f20
-&BackendServers=[
-    {"ServerId":" vm-233","Weight":"100"},
-    {"ServerId":" vm-234","Weight":"100"}]
-&公共请求参数
+ |
+|└ServerId|String|i-2zej4lxhjoq1icue6kup|ECS实例ID或ENI的实例ID。
+
+ |
+|└Weight|String|100|后端服务器的权重。
+
+ |
+|└Description|String|后端服务器|后端服务器描述。
+
+ |
+|└Type|String|ecs|后端服务器类型。
+
+ |
+|RequestId|String|34B82C81-F13B-4EEB-99F6-A048C67CC830|请求ID。
+
+ |
+
+## 示例 {#demo .section}
+
+请求示例
+
+``` {#request_demo}
+
+http(s)://[Endpoint]/?Action=AddBackendServers
+&LoadBalancerId=lb-2ze7o5h52g02kkzze7lru
+&<公共请求参数>
+
 ```
 
-**返回示例**
+正常返回示例
 
--   XML格式
+`XML` 格式
 
-    ```
-    <?xml version="1.0" encoding="UTF-8"?>
-    <AddBackendServersResponse>
-    	<RequestId>365F4154-92F6-4AE4-92F8-7FF34B540710</RequestId>
-    	<LoadBalancerId>139a00604ad-cn-east-hangzhou-01</LoadBalancerId>
-    	<BackendServers>
-    		<BackendServer>
-    			<ServerId>eni-231</ServerId>
-    			<Weight>100</Weight>
-                            <Type>eni</Type>
-    		</BackendServer>
-    		<BackendServer>
-    			<ServerId>eni-233</ServerId>
-    			<Weight>100</Weight>
-                            <Type>eni</Type>
-    		</BackendServer>
-    	</BackendServers>
-    </AddBackendServersResponse>
-    ```
+``` {#xml_return_success_demo}
+<AddBackendServersResponse>
+  <BackendServers>
+    <BackendServer>
+      <ServerId>i-2zej4lxhjoq1icue6kup</ServerId>
+      <Weight>100</Weight>
+      <Type>ecs</Type>
+    </BackendServer>
+    <BackendServer>
+      <ServerId>i-2ze1u9ywulp5pbvvc7hv</ServerId>
+      <Weight>100</Weight>
+      <Type>ecs</Type>
+    </BackendServer>
+  </BackendServers>
+  <RequestId>34B82C81-F13B-4EEB-99F6-A048C67CC830</RequestId>
+  <LoadBalancerId>lb-2ze7o5h52g02kkzze7lru</LoadBalancerId>
+</AddBackendServersResponse>
 
--   JSON格式
+```
 
-    ```
-    {
-      "RequestId": "365F4154-92F6-4AE4-92F8-7FF34B540710",
-      "LoadBalancerId": "139a00604ad-cn-east-hangzhou-01",
-      "BackendServers": {
-        "BackendServer": [
-          {
-            "ServerId": "eni-231",
-            "Weight": 100,
-            "Type":"eni",
-          },
-          {
-            "ServerId": "eni-233",
-            "Weight": 100,
-            "Type":"eni"
-          }
-        ]
-      }
-    }
-    ```
+`JSON` 格式
 
+``` {#json_return_success_demo}
+{
+	"RequestId":"34B82C81-F13B-4EEB-99F6-A048C67CC830",
+	"BackendServers":{
+		"BackendServer":[
+			{
+				"ServerId":"i-2zej4lxhjoq1icue6kup",
+				"Weight":100,
+				"Type":"ecs"
+			},
+			{
+				"ServerId":"i-2ze1u9ywulp5pbvvc7hv",
+				"Weight":100,
+				"Type":"ecs"
+			}
+		]
+	},
+	"LoadBalancerId":"lb-2ze7o5h52g02kkzze7lru"
+}
+```
+
+## 错误码 { .section}
+
+|HttpCode|错误码|错误信息|描述|
+|--------|---|----|--|
+|400|InvalidParameter|The specified load balancer does not support the network type of the ECS instance.|负载平衡实例不支持此种网络类型的ECS实例，请您换一种网络类型的ECS后再重试。|
+
+[查看本产品错误码](https://error-center.aliyun.com/status/product/Slb)
 
