@@ -27,16 +27,12 @@ This tutorial takes aliyuntest.club as an example \(most users of the website ar
 
 Purchase and configure at least two ECS instances in each region where the users of the application service are located.
 
-In this tutorial, two ECS instances are purchased in Beijing, Shenzhen and Shanghai separately, and a simple static web page is built on each ECS instance.
-
--   Example of ECS instances in the Beijing region
--   Example of ECS instances in the Shenzhen region
--   Example of ECS instances in the Singapore region
+In this tutorial, two ECS instances are purchased in Beijing, Shenzhen and Singapore separately, and a simple static web page is built on each ECS instance.
 
 ## Step 2 Purchase and configure Server Load Balancing instances {#section_u35_ypc_wdb .section}
 
 1.  See [Create an SLB instance](reseller.en-US/User Guide/Server Load Balancer instance/Create an SLB instance.md#) to create three Internet Server Load Balancing instances in Beijing, Shenzhen and Singapore separately.
-2.  See [Configure an SLB instance](../../../../reseller.en-US/Quick Start (New Console)/Configure an SLB instance.md#) to add listeners and add configured ECS instances to backend server pools.
+2.  See [Configure an SLB instance](../../../../../reseller.en-US/Quick Start (New Console)/Configure an SLB instance.md#) to add listeners and add configured ECS instances to backend server pools.
 
 -   Example of the SLB instance in the Beijing region
 -   Example of the SLB instance in the Shenzhen region
@@ -53,7 +49,7 @@ In this tutorial, two ECS instances are purchased in Beijing, Shenzhen and Shang
 
         After the instance is successfully purchased, the system automatically allocates a CNAME access domain name.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15689/154261581710621_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15689/154796537310621_en-US.png)
 
 2.  Configure the Global Traffic Manager instance.
     1.  On the Global Traffic Manager page, click the ID of the Global Traffic Manager instance or click **Configure** in the **Actions** column.
@@ -72,9 +68,9 @@ In this tutorial, two ECS instances are purchased in Beijing, Shenzhen and Shang
 
         In this tutorial, three IP address pools are to be added and each IP address pool accommodates one of the three SLB addresses in different regions.
 
-        -   Address Pool Name: Custom. For example, China North\_Beijing, China East\_Hanghou, Singapore.
+        -   Address Pool Name: Custom. For example, China North\_Beijing, China East\_Hangzhou, Singapore.
         -   Address: The SLB public IP address to be added to this region.
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15689/154261581710664_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15689/154796537310664_en-US.png)
 
     3.  Click **Confirm**.
 4.  Configure health check.
@@ -103,7 +99,7 @@ In this tutorial, two ECS instances are purchased in Beijing, Shenzhen and Shang
     3.  On the DNS Settings page, click **Add Record**.
     4.  On the Add Record page, direct the domain name aliyuntest.club accessed by end users to the alias record of the Global Traffic Manager instance in the form of CNAME.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15689/154261581710688_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15689/154796537310688_en-US.png)
 
     5.  Click **Confirm**.
 
@@ -113,5 +109,5 @@ Remove the ECS instances of the SLB instance in the Beijing region so as that th
 
 Visit the website to see if the access is normal.
 
-**Note:** It takes one to two minutes for Global Traffic Manager to make judgement after it detects that your IP is down. If you set the monitoring frequency to 1 minute, it takes two to three minutes for the link switching caused by exceptions to take effect.
+**Note:** It takes one to two minutes for Global Traffic Manager to make judgment after it detects that your IP is down. If you set the monitoring frequency to 1 minute, it takes two to three minutes for the link switching caused by exceptions to take effect.
 
