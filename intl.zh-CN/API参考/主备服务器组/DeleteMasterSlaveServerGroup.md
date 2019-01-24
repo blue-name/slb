@@ -1,65 +1,69 @@
-# DeleteMasterSlaveServerGroup {#reference_fvz_rxd_ndb .reference}
+# DeleteMasterSlaveServerGroup {#doc_api_961768 .reference}
 
-删除指定的主备服务器组。
+使用DeleteMasterSlaveServerGroup删除指定的主备服务器组。
 
-## 调试 {#section_psc_dy1_rfb .section}
+## 调试 {#apiExplorer .section}
 
-```
-点击[这里](https://api.aliyun.com/#product=Slb&api=DeleteMasterSlaveServerGroup)在OpenAPI Explorer中可视化调试，并自动生成SDK调用示例。
-```
+前往【[API Explorer](https://api.aliyun.com/#product=Slb&api=DeleteMasterSlaveServerGroup)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
 
-## 请求参数 {#section_v5w_nds_cz .section}
+## 请求参数 {#parameters .section}
 
-|名称|类型|是否必须|描述|
-|:-|:-|:---|:-|
-|Action|String|是|要执行的操作，取值：DeleteMasterSlaveServerGroup
+|名称|类型|是否必选|示例值|描述|
+|--|--|----|---|--|
+|Action|String|是|DeleteMasterSlaveServerGroup|要执行的操作。取值：**DeleteMasterSlaveVServerGroup**
 
-|
-|RegionId|String|是|负载均衡地域。您可以通过调用 DescribeRegions接口获取地域ID。
+ |
+|MasterSlaveServerGroupId|String|是|rsp-cige6j5e7p|主备服务器组ID。
 
-|
-|MasterSlaveServerGroupId|String|是|要删除的主备服务器组的ID。**说明：** 如果要删除的服务器组正在使用中，无法删除。
+ **说明：** 如果主备服务器组正在使用中，无法删除。
 
-|
+ |
+|RegionId|String|是|cn-hangzhou|负载均衡实例的地域ID。
 
-|名称|类型|说明|
-|:-|:-|:-|
-|RequestId|String|请求ID。|
+ |
 
-## 返回参数 {#section_ssd_pds_cz .section}
+## 返回参数 {#resultMapping .section}
 
-## 示例 {#section_oxr_pds_cz .section}
+|名称|类型|示例值|描述|
+|--|--|---|--|
+|RequestId|String|9DEC9C28-AB05-4DDF-9A78-6B08EC9CE18C|请求ID。
 
-**请求示例**
+ |
 
-``` {#public}
-https://slb.aliyuncs.com/?Action=CreateMasterSlaveServerGroup
+## 示例 {#demo .section}
+
+请求示例
+
+``` {#request_demo}
+
+/?MasterSlaveServerGroupId=rsp-cige6j5e7p
 &RegionId=cn-hangzhou
-&LoadBalancerId=lb-t4nj5vuz8ish9emfk1f20
-&MasterSlaveServerGroupName=Group1
-&MasterSlaveBackendServers=[
-    {"ServerId":"vm-233","Port":"80","Weight":"100","ServerType":"Master"},
-    {"ServerId":"vm-232","Port":"90","Weight":"100","ServerType":"Slave"},
-&公共请求参数
+&Action=DeleteMasterSlaveServerServerGroup
+&Tags={"tagKey":"Key1","tagValue":"Value1"}
+&<公共请求参数>
+
 ```
 
-**返回示例**
+正常返回示例
 
--   XML格式
+`XML` 格式
 
-    ```
-    <?xml version="1.0" encoding="utf-8"?>
-    <DeleteMasterSlaveServerGroupResponse>
-    	<RequestId>9DEC9C28-AB05-4DDF-9A78-6B08EC9CE18C</RequestId>
-    </DeleteMasterSlaveServerGroupResponse>
-    ```
+``` {#xml_return_success_demo}
+<DeleteMasterSlaveServerGroupResponse>
+  <RequestId>9DEC9C28-AB05-4DDF-9A78-6B08EC9CE18C</RequestId>
+</DeleteMasterSlaveServerGroupResponse>
 
--   JSON格式
+```
 
-    ```screen
-    {
-      "RequestId":"9DEC9C28-AB05-4DDF-9A78-6B08EC9CE18C"
-    }
-    ```
+`JSON` 格式
 
+``` {#json_return_success_demo}
+{
+	"RequestId":"9DEC9C28-AB05-4DDF-9A78-6B08EC9CE18C"
+}
+```
+
+## 错误码 { .section}
+
+[查看本产品错误码](https://error-center.aliyun.com/status/product/Slb)
 
