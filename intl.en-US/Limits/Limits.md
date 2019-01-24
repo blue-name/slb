@@ -1,11 +1,11 @@
 # Limits {#concept_mfm_mp4_tdb .concept}
 
-Server Load Balancer provides an API to query the default limits of an SLB instance. For more information, see [Query Quota-DescribeSlbQuotas](../../../../reseller.en-US//DescribeSlbQuotas.md#).
+Server Load Balancer provides an API to query the default limits of an SLB instance. For more information, see [Query Quota-DescribeSlbQuotas](../../../../../intl.en-US//DescribeSlbQuotas.md#).
 
 |Resource|Default limit|
 |:-------|:------------|
 |**Limits on SLB instances**|
-|Number of SLB instances per account|60|
+|Number of SLB instances per account|30|
 |Number of times that an ECS instance can be added to SLB instances|50|
 |Number of backend servers that can be added to an SLB instance|200|
 |Number of listeners that can be added to an SLB instance|50|
