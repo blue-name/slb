@@ -1,4 +1,4 @@
-# CreateLoadBalancerUDPListener {#doc_api_926171 .reference}
+# CreateLoadBalancerUDPListener {#doc_api_946025 .reference}
 
 使用CreateLoadBalancerUDPListener创建UDP监听。
 
@@ -28,7 +28,7 @@
 |LoadBalancerId|String|是|lb-bp1ygod3yctvg1y7wezms|负载均衡实例的ID。
 
  |
-|RegionId|String|是|cn-hanzhou|地域ID。
+|RegionId|String|是|cn-hangzhou|地域ID。
 
  |
 |AclId|String|否|123|监听绑定的访问策略组ID。
