@@ -1,110 +1,141 @@
-# SetVServerGroupAttribute {#reference_fw5_prd_ndb .reference}
+# SetVServerGroupAttribute {#doc_api_961760 .reference}
 
-修改虚拟服务器组的配置。
+调用SetVServerGroupAttribute修改虚拟服务器组的配置。
 
-## 请求参数 {#section_v5w_nds_cz .section}
+## 调试 {#apiExplorer .section}
 
-|名称|类型|是否必须|描述|
-|:-|:-|:---|:-|
-|Action|String|是|要执行的操作，取值：SetVServerGroupAttribute
+前往【[API Explorer](https://api.aliyun.com/#product=Slb&api=SetVServerGroupAttribute)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
 
-|
-|RegionId|String|是|负载均衡地域。您可以通过调用 DescribeRegions接口获取地域ID。
+## 请求参数 {#parameters .section}
 
-|
-|VServerGroupId|String|是|虚拟服务器组ID。|
-|VServerGroupName|String|否|虚拟服务器组名称。|
-|BackendServers|List|否|虚拟服务器组列表。一个服务器组最多可调用20个后端服务器。
-
-如果不指定该参数，则创建一个空的服务器组列表。
-
-|
-
-|名称|类型|是否必须|描述|
-|:-|:-|:---|:-|
-|ServerId|String|是|ECS实例ID。|
-|Port|Integer|是|后端服务器使用的端口。取值范围：1-65535
-
-|
-|Weight|Integer|是| 后端服务器的权重，取值：\[0,100\]
-
- 默认值为100。如果值为0，则不会将请求转发给该后端服务器。
+|名称|类型|是否必选|示例值|描述|
+|--|--|----|---|--|
+|Action|String|是|SetVServerGroupAttribute|要执行的操作。取值：**SetVServerGroupAttribute**。
 
  |
-|Type|String|是|后端服务器类型，取值：-   ecs：ECS实例（默认）
--   eni：弹性网卡实例
+|RegionId|String|是|cn-hangzhou|负载均衡地域ID。
 
-|
+ |
+|VServerGroupId|String|是|rsp-cige6j5e7p|服务器组ID。
 
-## 返回参数 {#section_ssd_pds_cz .section}
+ |
+|BackendServers|String|否|\[\{'ServerId':'vm-233','Port':'80','Weight':'100'\},\{'ServerId':'vm-232','Port':'90','Weight':'100'\},\{'ServerId':'vm-231','Port':'70','Weight':'100'\}\]|虚拟服务器组列表。
 
-|名称|类型|描述|
-|:-|:-|:-|
-|RequestId|String|请求ID。|
-|VServerGroupId|String|服务器组ID。|
-|VServerGroupName|String|服务器组名称。|
-|BackendServers|List|后端服务器列表。|
+ 单次调用最多可添加20个后端服务器。
 
-## 示例 {#section_oxr_pds_cz .section}
+ |
+|VServerGroupName|String|否|Group1|虚拟服务器组名称，这里可以重命名。
 
-**请求示例**
+ |
 
-``` {#public}
-https://slb.aliyuncs.com/?Action=SetVServerGroupAttribute
+## 返回参数 {#resultMapping .section}
+
+|名称|类型|示例值|描述|
+|--|--|---|--|
+|VServerGroupId|String|rsp-cige6j5e7p|服务器组ID。
+
+ |
+|VServerGroupName|String|Group1|虚拟服务器组名称。
+
+ |
+|BackendServers| | |后端服务器列表。
+
+ |
+|└ServerId|String|vm-231|ECS实例ID或ENI实例ID。
+
+ |
+|└Port|Integer|70|后端服务器使用的端口。
+
+ |
+|└Weight|Integer|100|后端服务器的权重。
+
+ |
+|└Description|String|后端服务器组描述。|后端服务器组描述。
+
+ |
+|└Type|String|ecs|后端服务器类型，取值：
+
+ -   **ecs**：ECS实例（默认）
+-   **eni**：弹性网卡实例
+
+ |
+|RequestId|String|9DEC9C28-AB05-4DDF-9A78-6B08EC9CE18C|请求ID。
+
+ |
+
+## 示例 {#demo .section}
+
+请求示例
+
+``` {#request_demo}
+
+http(s)://[Endpoint]/?Action=SetVServerGroupAttribute
 &RegionId=cn-hangzhou
-&LoadBalancerId=lb-t4nj5vuz8ish9emfk1f20
-&VServerGroupName=Group1
-&BackendServers=[
-    {"ServerId":"vm-233","Port":"80","Weight":"100"},
-    {"ServerId":"vm-232","Port":"90","Weight":"100"},
-    {"ServerId":"vm-231","Port":"70","Weight":"100"}
-]
-&公共请求参数
+&VServerGroupId=rsp-cige6j5e7p
+&<公共请求参数>
+
 ```
 
-**返回示例**
+正常返回示例
 
--   XML格式
+`XML` 格式
 
-    ```
-    <?xml version="1.0" encoding="utf-8"?>
-    <SetVServerGroupAttributeResponse>
-    	<RequestId>9DEC9C28-AB05-4DDF-9A78-6B08EC9CE18C</RequestId>
-    	<VServerGroupId>rsp-cige6j5e7p</VServerGroupId>
-    	<BackendServers>
-    		<BackendServer>
-    			<ServerId>vm-233</ServerId>
-    			<Port>80</Port>
-    			<Weight>100</Weight>
-    		</BackendServer>
-    		<BackendServer>
-    			<ServerId>vm-232</ServerId>
-    			<Port>90</Port>
-    			<Weight>100</Weight>
-    		</BackendServer>
-    		<BackendServer>
-    			<ServerId>vm-231</ServerId>
-    			<Port>70</Port>
-    			<Weight>100</Weight>
-    		</BackendServer>
-    	</BackendServers>
-    </SetVServerGroupAttributeResponse>
-    ```
+``` {#xml_return_success_demo}
+<SetVServerGroupAttribute>
+  <RequestId>9DEC9C28-AB05-4DDF-9A78-6B08EC9CE18C</RequestId>
+  <VServerGroupId>rsp-cige6j5e7p</VServerGroupId>
+  <VServerGroupName>Group1</VServerGroupName>
+  <BackendServers>
+    <BackendServer>
+      <ServerId>vm-233</ServerId>
+      <Port>80</Port>
+      <Weight>100</Weight>
+    </BackendServer>
+    <BackendServer>
+      <ServerId>vm-232</ServerId>
+      <Port>90</Port>
+      <Weight>100</Weight>
+    </BackendServer>
+    <BackendServer>
+      <ServerId>vm-231</ServerId>
+      <Port>70</Port>
+      <Weight>100</Weight>
+    </BackendServer>
+  </BackendServers>
+</SetVServerGroupAttribute>
 
--   JSON格式
+```
 
-    ```
-    {
-      "RequestId":"9DEC9C28-AB05-4DDF-9A78-6B08EC9CE18C",
-      "VServerGroupId":"rsp-cige6j5e7p",
-      "BackendServers":{
-      "BackendServer":[
-        {"ServerId":"vm-233","Port":"80","Weight":"100"},
-        {"ServerId":"vm-232","Port":"90","Weight":"100"},
-        {"ServerId":"vm-231","Port":"70","Weight":"100"}
-        ]
-      }
-    }
-    ```
+`JSON` 格式
 
+``` {#json_return_success_demo}
+{
+	"BackendServers":{
+		"BackendServer":[
+			{
+				"ServerId":"vm-233",
+				"Port":"80",
+				"Weight":"100"
+			},
+			{
+				"ServerId":"vm-232",
+				"Port":"90",
+				"Weight":"100"
+			},
+			{
+				"ServerId":"vm-231",
+				"Port":"70",
+				"Weight":"100"
+			}
+		]
+	},
+	"RequestId":"9DEC9C28-AB05-4DDF-9A78-6B08EC9CE18C",
+	"VServerGroupId":"rsp-cige6j5e7p",
+	"VServerGroupName":"Group1"
+}
+```
+
+## 错误码 { .section}
+
+[查看本产品错误码](https://error-center.aliyun.com/status/product/Slb)
 
