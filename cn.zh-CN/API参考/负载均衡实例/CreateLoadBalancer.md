@@ -1,13 +1,15 @@
-# CreateLoadBalancer {#doc_api_753644 .reference}
+# CreateLoadBalancer {#doc_api_944742 .reference}
 
-创建负载均衡实例。
+调用CreateLoadBalancer创建负载均衡实例。
 
 调用该接口创建实例时，请注意：
 
 -   实例创建后，会产生费用。关于负载均衡的计费说明，参见[计费说明](~~27692~~)。
--   如果不指定实例规格（`LoadBalancerSpec`），则创建性能共享型实例。建议在创建负载均衡实例时，通过规格参数（`LoadBalancerSpec`）指定实例的规格。
+-   如果不指定实例规格**LoadBalancerSpec**，则创建性能共享型实例。建议在创建负载均衡实例时，通过规格参数**LoadBalancerSpec**指定实例的规格。
 
- **调试** `点击[这里]（https://api.aliyun.com/?spm=a2c4g.11186623.2.11.336d4b47rivF4A#product=Slb&search=CreateLoadBalancer&api=CreateLoadBalancer&params={}&tab=DEBUG&lang=JAVA）在OpenAPI Explorer中可视化调试，并自动生成SDK调用示例。` 
+## 调试 {#apiExplorer .section}
+
+单击[这里](https://api.aliyun.com/#product=Slb&api=CreateLoadBalancer)在OpenAPI Explorer中进行可视化调试，并生成SDK代码示例。
 
 ## 请求参数 {#parameters .section}
 
@@ -21,22 +23,26 @@
  您可以通过调用[DescribeRegions](~~25609~~)接口查询地域ID。
 
  |
-|Address|String|否|192.168.0.6|VPC类型负载均衡实例的IP地址。设置该参数时，必须指定**VSwitchId**参数的值。
+|Address|String|否|192.168.0.1|指定负载均衡实例的私网IP地址，该地址必须包含在交换机的目标网段下。
 
  |
-|AddressIPVersion|String|否|ipv4|IP版本。
+|AddressIPVersion|String|否|ipv4|负载均衡实例的IP版本，可以设置为ipv4或者ipv6。
 
  |
 |AddressType|String|否|internet|负载均衡实例的网络类型。取值：
 
- -   internet：创建公网负载均衡实例后，系统会分配一个公网IP地址，可以转发公网请求。
--   intranet：创建内网负载均衡实例后，系统会分配一个内网IP地址，仅可转发内网请求。
+ -   **internet**：创建公网负载均衡实例后，系统会分配一个公网IP地址，可以转发公网请求。
+-   **intranet**：创建内网负载均衡实例后，系统会分配一个内网IP地址，仅可转发内网请求。
 
  |
-|AutoPay|Boolean|否|true|是否是自动支付预付费公网实例的账单，取值：**true|false（默认）**
+|AutoPay|Boolean|否|true|是否是自动支付预付费公网实例的账单。
+
+ 取值：**true|false（默认）**
+
+ **说明：** 该参数仅适用于中国站。
 
  |
-|Bandwidth|Integer|否|10|是否是自动支付预付费公网实例的账单，取值：**true|false（默认）**
+|Bandwidth|Integer|否|10|监听的带宽峰值。
 
  |
 |ClientToken|String|否|5A2CFF0E-5718-45B5-9D4D-70B3FF3898|用于保证请求的幂等性。由客户端生成该参数值，要保证在不同请求间唯一，最大不值过64个ASCII字符。
@@ -44,8 +50,10 @@
  |
 |Duration|Integer|否|1|预付费公网实例的购买时长，取值：
 
- -   如果PricingCycle为month，取值为1-9。
--   如果PricingCycle为year，取值为1-3。
+ -   如果**PricingCycle**为**month**，取值为**1~9**。
+-   如果**PricingCycle**为**year**，取值为**1~3**。
+
+ **说明：** 该参数仅适用于中国站。
 
  |
 |InternetChargeType|String|否|paybytraffic|公网类型实例的付费方式。取值：
@@ -69,9 +77,11 @@
 -   slb.s3.medium
 -   slb.s3.large
 
- **注意**： 若不指定规格，则创建性能共享型实例。
+每个地域支持的规格不同。
 
- 每个地域支持的规格不同。目前支持性能保障型实例的地域有：华北 1（青岛）、华北 2（北京）、华东 1（杭州）、华东 2（上海）、华南 1（深圳）、华北 3（张家口）、华北 5 （呼和浩特）、亚太东南 1（新加坡）和美国东部 1（弗吉尼亚）。关于每种规格的说明，参见[性能保障型实例](~~27657~~)。
+ 目前支持性能保障型实例的地域有：华北 1（青岛）、华北 2（北京）、华东 1（杭州）、华东 2（上海）、华南 1（深圳）、华北 3（张家口）、华北 5 （呼和浩特）、亚太东南 1（新加坡）、英国（伦敦）、欧洲中部 1（法兰克福）、亚太东南 2（悉尼）、亚太东南 3（吉隆坡）、中东东部 1（迪拜）、亚太东南 5（雅加达）、美西 1（硅谷）、亚太南部 1（孟买）、亚太东北 1（东京）、香港和美东 1（弗吉尼亚）。关于每种规格的说明，参见[性能保障型实例](~~27657~~)。
+
+ **说明：** 若不指定规格，则创建性能共享型实例。
 
  |
 |MasterZoneId|String|否|cn-hangzhou-b|负载均衡实例的主可用区ID。
@@ -81,13 +91,12 @@
  |
 |PayType|String|否|PayOnDemand|实例的计费类型，取值：
 
- -   PayOnDemand：按量付费
+ -   **PayOnDemand**：按量付费
 
  |
 |PricingCycle|String|否|month|预付费公网实例的计费周期，取值：**month|year**
 
- |
-|Ratio|Integer|否|100|Ratio参数。
+ **说明：** 仅适用于中国站。
 
  |
 |ResourceGroupId|String|否|rg-atstuj3rtoptyui|企业资源组ID。
@@ -96,9 +105,6 @@
 |SlaveZoneId|String|否|cn-hangzhou-d|负载均衡实例的备可用区ID。
 
  您可以通过调用[DescribeZone](~~27585~~)接口可查到相应地域下的主备可用区信息。
-
- |
-|Tags|String|否|\{"tagKey":"Key1","tagValue":"Value1"\}|负载均衡实例标签。
 
  |
 |VSwitchId|String|否|vsw-bp12mw1f8k3jgygk9bmlj|专有网络实例的所属交换机ID。
@@ -151,27 +157,9 @@
 
 ``` {#request_demo}
 
-/?RegionId=cn-hangzhou
+http(s)://[Endpoint]/?Action=CreateLoadBalancer
 &Action=CreateLoadBalancer
-&Address=192.168.0.6
-&AddressIPVersion=ipv4
-&AddressType=internet
-&AutoPay=true
-&Bandwidth=10
-&ClientToken=5A2CFF0E-5718-45B5-9D4D-70B3FF3898
-&Duration=1
-&InternetChargeType=paybytraffic
-&LoadBalancerName=abc
-&LoadBalancerSpec=slb.s2.small
-&MasterZoneId=cn-hangzhou-b
-&PayType=PayOnDemand
-&PricingCycle=month
-&Ratio=100
-&ResourceGroupId=rg-atstuj3rtoptyui
-&SlaveZoneId=cn-hangzhou-d
-&Tags={"tagKey":"Key1","tagValue":"Value1"}
-&VpcId=vpc-bp1aevy8sofi8mh1qc5cm
-&VSwitchId=vsw-bp12mw1f8k3jgygk9bmlj
+&RegionId=cn-hangzhou
 &<公共请求参数>
 
 ```
@@ -208,31 +196,6 @@
 	"LoadBalancerId":"lb-bp1b6c719dfa08exfuca5",
 	"VSwitchId":"vsw-bp12mw1f8k3jgygk9bmlj",
 	"VpcId":"vpc-bp1aevy8sofi8mh1qc5cm"
-}
-```
-
-异常返回示例
-
-`XML` 格式
-
-``` {#xml_return_failed_demo}
-<CreateLoadBalancerResponse>
-  <Code>InvalidParameter</Code>
-  <Message>The specified parameter is not valid.</Message>
-  <HostId>slb.aliyuncs.com</HostId>
-  <RequestId>0669D684-69D8-408E-A4FA-B9011E0F4E66</RequestId>
-</CreateLoadBalancerResponse>
-
-```
-
-`JSON` 格式
-
-``` {#json_return_failed_demo}
-{
-	"Message":"The specified parameter is not valid.",
-	"RequestId":"0669D684-69D8-408E-A4FA-B9011E0F4E66",
-	"HostId":"slb.aliyuncs.com",
-	"Code":"InvalidParameter"
 }
 ```
 
